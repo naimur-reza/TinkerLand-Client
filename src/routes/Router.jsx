@@ -1,8 +1,7 @@
-const { createBrowserRouter } = require("react-router-dom");
-const { default: LoginLayout } = require("../layout/LoginLayout");
-import { useNavigate, Navigate } from "react-router-dom";
+import { useNavigate, Navigate, createBrowserRouter } from "react-router-dom";
 import Main from "../layout/Main";
 import Home from "../pages/Home";
+import LoginLayout from "../layout/LoginLayout";
 
 const router = createBrowserRouter([
   {
@@ -34,3 +33,5 @@ const router = createBrowserRouter([
     ],
   },
 ]);
+
+export default router;
