@@ -2,7 +2,7 @@ import { Carousel, Typography, Button } from "@material-tailwind/react";
 
 export default function Banner() {
   return (
-    <Carousel className="h-[100vh]">
+    <Carousel className="h-[calc(100vh-64px)]">
       <div className="relative h-full w-full">
         <img
           src="https://i.ibb.co/0F3Rjjs/chris-hardy-H5-Ffv4-I5-ZMI-unsplash.jpg"
