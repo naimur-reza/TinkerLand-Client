@@ -38,15 +38,18 @@ const Login = () => {
     popUpGoogle();
   };
   return (
-    <div className="hero min-h-screen my-contain ">
+    <div className="hero  my-container">
       <div className="hero-content flex-col lg:flex-row justify-between">
-        <div className="text-center lg:text-left">
-          <h1 className="text-5xl font-bold">Login now!</h1>
-          <img src="https://i.ibb.co/z21HQ8k/6300830.jpg" alt="" />
+        <div className="text-center ">
+          <img
+            className="w-2/3 "
+            src="https://i.ibb.co/z21HQ8k/6300830.jpg"
+            alt=""
+          />
         </div>
         <form
           onSubmit={handleLogin}
-          className="card flex-shrink-0 w-full max-w-sm border-2 bg-base-100">
+          className="card flex-shrink-0 w-full max-w-sm bg-base-100 shadow-lg">
           <div className="card-body ">
             <div className="form-control">
               <label className="label">
