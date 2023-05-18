@@ -1,8 +1,8 @@
 import React, { useContext, useState } from "react";
-import img from "../../src/assets/images/login/login.svg";
 import { FaFacebook, FaGoogle, FaLinkedin } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { AuthContext } from "../providers/AuthProvider";
+import { AuthContext } from "../providers/AuthProvider/AuthProvider";
+
 const Login = () => {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
@@ -42,7 +42,7 @@ const Login = () => {
       <div className="hero-content flex-col lg:flex-row justify-between">
         <div className="text-center lg:text-left">
           <h1 className="text-5xl font-bold">Login now!</h1>
-          <img src={img} alt="" />
+          <img src="https://i.ibb.co/z21HQ8k/6300830.jpg" alt="" />
         </div>
         <form
           onSubmit={handleLogin}
