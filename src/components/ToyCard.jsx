@@ -8,7 +8,8 @@ import {
   CardFooter,
 } from "@material-tailwind/react";
 const ToyCard = ({ toy }) => {
-  const { _id, sub_category, price, rating, imageURl } = toy;
+  const { _id, sub_category, seller_name, price, rating, imageURl, quantity } =
+    toy;
   return (
     <Card className="w-96 overflow-hidden">
       <CardHeader shadow={false} floated={false} className="h-96">
@@ -19,7 +20,7 @@ const ToyCard = ({ toy }) => {
       </CardHeader>
       <CardBody>
         <div className="flex items-center justify-between mb-2">
-          <Typography color="blue-gray" className="font-medium">
+          <Typography color="blue-gray" className="font-medium text-lg">
             {sub_category}
           </Typography>
           <Typography color="blue-gray" className="font-medium text-xl">
@@ -29,9 +30,14 @@ const ToyCard = ({ toy }) => {
         <Typography
           variant="small"
           color="gray"
+          className="font-medium text-md mb-1 opacity-75 ">
+          Seller: {seller_name}
+        </Typography>
+        <Typography
+          variant="small"
+          color="gray"
           className="font-normal opacity-75">
-          With plenty of talk and listen time, voice-activated Siri access, and
-          an available wireless charging case.
+          Available Quantity: {quantity}
         </Typography>
       </CardBody>
       <CardFooter className="pt-0">
