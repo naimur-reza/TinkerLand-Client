@@ -1,8 +1,7 @@
 import React, { useContext, useState } from "react";
-import { AuthContext } from "../providers/AuthProvider";
-import img from "../../src/assets/images/login/login.svg";
-import { FaFacebook, FaGoogle, FaLinkedin } from "react-icons/fa";
+import { FaFacebook, FaGoogle, FaLinkedin } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../providers/AuthProvider/AuthProvider";
 const Register = () => {
   const { user, createUser, popUpGoogle } = useContext(AuthContext);
   const [name, setName] = useState("");
@@ -20,7 +19,7 @@ const Register = () => {
       <div className="hero-content flex-col lg:flex-row justify-between">
         <div className="text-center lg:text-left">
           <h1 className="text-5xl font-bold">Login now!</h1>
-          <img src={img} alt="" />
+          <img src="https://i.ibb.co/z21HQ8k/6300830.jpg" alt="" />
         </div>
         <form
           onSubmit={handleRegister}
