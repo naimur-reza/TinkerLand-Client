@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { FaFacebook, FaGoogle, FaLinkedin } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider/AuthProvider";
-
+import { Button, Input } from "@material-tailwind/react";
 const Login = () => {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
@@ -52,29 +52,24 @@ const Login = () => {
           className="card flex-shrink-0 w-full max-w-sm bg-base-100 shadow-lg">
           <div className="card-body ">
             <div className="form-control">
-              <label className="label">
-                <span className="label-text">Email</span>
-              </label>
-              <input
+              <Input
+                label="Email"
                 required
+                size="lg"
                 type="text"
                 name="email"
-                value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="email"
                 className="input input-bordered"
               />
             </div>
             <div className="form-control">
-              <label className="label">
-                <span className="label-text">Password</span>
-              </label>
-              <input
+              <Input
                 required
+                label="Password"
                 type="text"
+                size="lg"
                 name="password"
-                placeholder="password"
-                className="input input-bordered"
+                className="input input-bordered "
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
@@ -85,7 +80,7 @@ const Login = () => {
               </label>
             </div>
             <div className="form-control mt-6">
-              <button className="btn btn-primary">Login</button>
+              <Button color="amber">Login</Button>
             </div>
             <div>
               <p className="text-center my-text">Or Login With</p>

@@ -2,11 +2,13 @@ import React, { useContext, useState } from "react";
 import { FaFacebook, FaGoogle, FaLinkedin } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider/AuthProvider";
+import { Button, Input } from "@material-tailwind/react";
 const Register = () => {
   const { user, createUser, popUpGoogle } = useContext(AuthContext);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [PhotoURL, setPhotoURL] = useState("");
   const handleRegister = (e) => {
     e.preventDefault();
     createUser(email, password);
@@ -14,6 +16,7 @@ const Register = () => {
   const handleGoogle = () => {
     popUpGoogle();
   };
+  console.log(user);
   return (
     <div className="hero min-h-screen my-container ">
       <div className="hero-content flex-col lg:flex-row justify-between">
@@ -29,45 +32,48 @@ const Register = () => {
           className="card flex-shrink-0 w-full max-w-sm shadow-lg bg-base-100">
           <div className="card-body ">
             <div className="form-control">
-              <label className="label">
-                <span className="label-text">Name</span>
-              </label>
-              <input
+              <Input
+                label="Name"
+                size="lg"
                 required
                 type="text"
                 name="name"
-                value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder="name"
-                className="input border-2 rounded border-gray-2 border-2 rounded border-gray-200 "
+                className="Input border-2 rounded border-gray-2 border-2 rounded border-gray-200 "
               />
             </div>
             <div className="form-control">
-              <label className="label">
-                <span className="label-text">Email</span>
-              </label>
-              <input
+              <Input
                 required
                 type="text"
                 name="email"
-                value={email}
+                label="Email"
+                size="lg"
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="email"
-                className="input border-2 rounded border-gray-200 "
+                className="Input border-2 rounded border-gray-200 "
               />
             </div>
             <div className="form-control">
-              <label className="label">
-                <span className="label-text">Password</span>
-              </label>
-              <input
+              <Input
                 required
-                type="text"
+                label="Password"
+                type="password"
                 name="password"
-                placeholder="password"
-                className="input border-2 rounded border-gray-200 "
+                size="lg"
+                className="Input border-2 rounded border-gray-200 "
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+              />
+            </div>{" "}
+            <div className="form-control">
+              <Input
+                required
+                label="PhotoURL"
+                type="text"
+                name="PhotoURl"
+                size="lg"
+                className="Input  rounded border-gray-200 "
+                onChange={(e) => setPhotoURL(e.target.value)}
               />
               <label className="label">
                 <a href="#" className="label-text-alt link link-hover">
@@ -76,7 +82,9 @@ const Register = () => {
               </label>
             </div>
             <div className="form-control mt-6">
-              <button className="btn btn-primary">Register</button>
+              <Button onClick={handleRegister} variant="" color="amber">
+                Register
+              </Button>
             </div>
             <div>
               <p className="text-center my-text">Or Sign Up With</p>
