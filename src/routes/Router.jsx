@@ -11,20 +11,20 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 
 const router = createBrowserRouter([
-  {
-    path: "/",
-    Element: <LoginLayout />,
-    children: [
-      {
-        path: "/auth",
-        element: <Navigate to={"/home"} />,
-      },
-      {
-        path: "/auth/register",
-        element: <Navigate to={"/home"} />,
-      },
-    ],
-  },
+  // {
+  //   path: "/",
+  //   Element: <LoginLayout />,
+  //   children: [
+  //     {
+  //       path: "/auth",
+  //       element: <Navigate to={"/home"} />,
+  //     },
+  //     {
+  //       path: "/auth/register",
+  //       element: <Navigate to={"/home"} />,
+  //     },
+  //   ],
+  // },
   {
     path: "/",
     element: <Main />,

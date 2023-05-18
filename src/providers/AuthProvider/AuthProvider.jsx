@@ -9,6 +9,7 @@ import {
   signOut,
 } from "firebase/auth";
 import app from "../../utils/firebase/firebase.config";
+import { Navigate } from "react-router-dom";
 
 export const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
@@ -22,6 +23,7 @@ const AuthProvider = ({ children }) => {
         setLoading(true);
         const loggedUser = res.user;
         setUser(loggedUser);
+        <Navigate to={"/"} />;
       })
       .catch((err) => console.log(err));
   };
