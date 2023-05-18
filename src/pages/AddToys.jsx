@@ -12,7 +12,15 @@ const AddToys = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    // handle add toy from here
+    fetch("http://localhost:5000/toys", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
   };
 
   return (

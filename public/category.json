@@ -1,0 +1,71 @@
+[
+  {
+    "Category": "Superheroes",
+    "Subcategories": [
+      {
+        "Subcategory": "Marvel",
+        "Image": "marvel.jpg",
+        "Rating": 4.5,
+        "Price": "$19.99"
+      },
+      {
+        "Subcategory": "Spider-Man",
+        "Image": "spiderman.jpg",
+        "Rating": 4.8,
+        "Price": "$24.99"
+      },
+      {
+        "Subcategory": "Iron Man",
+        "Image": "ironman.jpg",
+        "Rating": 4.6,
+        "Price": "$27.99"
+      }
+    ]
+  },
+  {
+    "Category": "Sci-Fi",
+    "Subcategories": [
+      {
+        "Subcategory": "Star Wars",
+        "Image": "starwars.jpg",
+        "Rating": 4.7,
+        "Price": "$29.99"
+      },
+      {
+        "Subcategory": "Jedi",
+        "Image": "jedi.jpg",
+        "Rating": 4.4,
+        "Price": "$22.99"
+      },
+      {
+        "Subcategory": "Sith",
+        "Image": "sith.jpg",
+        "Rating": 4.6,
+        "Price": "$25.99"
+      }
+    ]
+  },
+  {
+    "Category": "Fantasy",
+    "Subcategories": [
+      {
+        "Subcategory": "Lord of the Rings",
+        "Image": "lotr.jpg",
+        "Rating": 4.9,
+        "Price": "$34.99"
+      },
+      {
+        "Subcategory": "Elves",
+        "Image": "elves.jpg",
+        "Rating": 4.3,
+        "Price": "$21.99"
+      },
+      {
+        "Subcategory": "Orcs",
+        "Image": "orcs.jpg",
+        "Rating": 4.5,
+        "Price": "$26.99"
+      }
+    ]
+  }
+]
