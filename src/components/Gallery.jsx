@@ -1,7 +1,113 @@
 import React from "react";
 
 const Gallery = () => {
-  return <div></div>;
+  return (
+    <>
+      <h1 className="text-3xl text-center pt-10">Gallery</h1>
+      <div className="my-container grid grid-cols-2 lg:grid-cols-4 gap-4 py-10">
+        <img
+          className="h-80 w-72 rounded-sm hover:scale-110 duration-200"
+          src="https://i.ibb.co/xhxH5jm/Adventures-of-Deadpool-Deadpool-Custom-Action-Figure.jpg"
+          alt=""
+        />
+        <img
+          className="h-80 w-72 rounded-sm hover:scale-110 duration-200"
+          src="https://i.ibb.co/hCzM6mq/Mattel-MOTUC-Panthor-action-figure.jpg"
+          alt=""
+        />
+        <img
+          className="h-80 w-72 rounded-sm hover:scale-110 duration-200"
+          src="https://i.ibb.co/hXKGT3f/Anthony-s-Custom-Action-Figures.jpg"
+          alt=""
+        />
+        <img
+          className="h-80 w-72 rounded-sm hover:scale-110 duration-200"
+          src="https://i.ibb.co/bXGkJs5/Ben-Grimm-Marvel-Legends-Custom-Action-Figure.jpg"
+          alt=""
+        />
+        <img
+          className="h-80 w-72 rounded-sm hover:scale-110 duration-200"
+          src="https://i.ibb.co/wdvv8M1/Custom-Action-Figure-Tutorials.png"
+          alt=""
+        />
+        <img
+          className="h-80 w-72 rounded-sm hover:scale-110 duration-200"
+          src="https://i.ibb.co/xGZQXmQ/Online-Shopping-for-Popular-Electronics-Fashion-Home-Garden-Toys-Sports-Automobiles-and-More.jpg"
+          alt=""
+        />
+        <img
+          className="h-80 w-72 rounded-sm hover:scale-110 duration-200"
+          src="https://i.ibb.co/jwPgKL4/Red-Hulk-Marvel-Legends-Target-exclusive-action-figure-1.jpg"
+          alt=""
+        />
+        <img
+          className="h-80 w-72 rounded-sm hover:scale-110 duration-200"
+          src="https://i.ibb.co/2gkxpdM/34-99-US-Huong-Anime-Figures-25cm-Naruto-Shippuden-Uzumaki-Naruto-1-6-Scale-Face-Change-Pvc-Action-F.jpg"
+          alt=""
+        />
+        <img
+          className="h-80 w-72 rounded-sm hover:scale-110 duration-200"
+          src="https://i.ibb.co/FmNZxgK/Banda-SH-Figuarts-Avengers-Captain-America-About-155mm-ABS-u0026-PVC-Painted-Action-Figure.jpg"
+          alt=""
+        />
+        <img
+          className="h-80 w-72 rounded-sm hover:scale-110 duration-200"
+          src="https://i.ibb.co/3cqwyms/d6530d8e-0a88-4df3-8550-059f6a827a0d.jpg"
+          alt=""
+        />
+        <img
+          className="h-80 w-72 rounded-sm hover:scale-110 duration-200"
+          src="https://i.ibb.co/1ZtzMCC/DC-Godspeed-DC-Universe-Custom-Action-Figure.jpg"
+          alt=""
+        />
+        <img
+          className="h-80 w-72 rounded-sm hover:scale-110 duration-200"
+          src="https://i.ibb.co/5YKPmr8/Deathstroke-Anime-Style-DC-Universe-Custom-Action-Figure.jpg"
+          alt=""
+        />
+        <img
+          className="h-80 w-72 rounded-sm hover:scale-110 duration-200"
+          src="https://i.ibb.co/VYpsTZq/faf2430d-ba79-4c61-8816-a216f4cd8886.png"
+          alt=""
+        />
+        <img
+          className="h-80 w-72 rounded-sm hover:scale-110 duration-200"
+          src="https://i.ibb.co/Hp74mVx/Iron-Fist-Immortal-Weapon-Avengers-Custom-Action-Figure.png"
+          alt=""
+        />
+        <img
+          className="h-80 w-72 rounded-sm hover:scale-110 duration-200"
+          src="https://i.ibb.co/XzCwXFC/Marvel-Select-Red-Hulk-Action-Figure.jpg"
+          alt=""
+        />
+        <img
+          className="h-80 w-72 rounded-sm hover:scale-110 duration-200"
+          src="https://i.ibb.co/RSsPJwG/TAMASHII-NATIONS-Bandai-Robot-Spirits-Guardian-Bravo-Pacific-Rim-Uprising-Action-Figure.jpg"
+          alt=""
+        />
+        <img
+          className="h-80 w-72 rounded-sm hover:scale-110 duration-200"
+          src="https://i.ibb.co/Xk1xMKf/Teenage-Mutant-Ninja-Deadpool-Marvel-Custom-Action-Figure.jpg"
+          alt=""
+        />
+        <img
+          className="h-80 w-72 rounded-sm hover:scale-110 duration-200"
+          src="https://i.ibb.co/jwPgKL4/Red-Hulk-Marvel-Legends-Target-exclusive-action-figure-1.jpg"
+          alt=""
+        />
+        <img
+          className="h-80 w-72 rounded-sm hover:scale-110 duration-200"
+          src="https://i.ibb.co/Hp74mVx/Iron-Fist-Immortal-Weapon-Avengers-Custom-Action-Figure.png"
+          alt=""
+        />
+        <img
+          className="h-80 w-72 rounded-sm hover:scale-110 duration-200"
+          src="https://i.ibb.co/3cqwyms/d6530d8e-0a88-4df3-8550-059f6a827a0d.jpg"
+          alt=""
+        />
+      </div>
+    </>
+  );
 };
 
 export default Gallery;

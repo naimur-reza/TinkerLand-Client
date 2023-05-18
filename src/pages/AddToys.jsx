@@ -1,15 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Button, Input } from "@material-tailwind/react";
 import { useForm } from "react-hook-form";
 import "../../src/App.css";
+import { AuthContext } from "../providers/AuthProvider/AuthProvider";
 const AddToys = () => {
+  const { user, loading } = useContext(AuthContext);
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    // handle add toy from here
+  };
 
   return (
     <div className="bg-cover  transformer min-h-[calc(100vh-64px)] ">
