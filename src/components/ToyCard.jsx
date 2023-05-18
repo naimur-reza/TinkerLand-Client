@@ -7,6 +7,7 @@ import {
   Button,
   CardFooter,
 } from "@material-tailwind/react";
+import { Link } from "react-router-dom";
 const ToyCard = ({ toy }) => {
   const { _id, sub_category, seller_name, price, rating, imageURl, quantity } =
     toy;
@@ -41,12 +42,14 @@ const ToyCard = ({ toy }) => {
         </Typography>
       </CardBody>
       <CardFooter className="pt-0">
-        <Button
-          ripple={false}
-          fullWidth={true}
-          className="bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:shadow-none hover:scale-105 focus:shadow-none focus:scale-105 active:scale-100">
-          View Details
-        </Button>
+        <Link to={`/toyDetails/${_id}`}>
+          <Button
+            ripple={false}
+            fullWidth={true}
+            className="bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:shadow-none hover:scale-105 focus:shadow-none focus:scale-105 active:scale-100">
+            View Details
+          </Button>
+        </Link>
       </CardFooter>
     </Card>
   );
