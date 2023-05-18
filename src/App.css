@@ -1,0 +1,10 @@
+.transformer {
+  background-size: cover;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.869), rgba(0, 0, 0, 0.789)),
+    url("https://i.ibb.co/6s7X86q/hd-wallpaper-1566507-1920.jpg");
+  height: calc(100vh-64px);
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
