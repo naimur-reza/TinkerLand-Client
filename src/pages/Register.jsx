@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { FaFacebook, FaGoogle, FaLinkedin } from "react";
+import { FaFacebook, FaGoogle, FaLinkedin } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider/AuthProvider";
 const Register = () => {
@@ -15,15 +15,18 @@ const Register = () => {
     popUpGoogle();
   };
   return (
-    <div className="hero min-h-screen my-contain ">
+    <div className="hero min-h-screen my-container ">
       <div className="hero-content flex-col lg:flex-row justify-between">
         <div className="text-center lg:text-left">
-          <h1 className="text-5xl font-bold">Login now!</h1>
-          <img src="https://i.ibb.co/z21HQ8k/6300830.jpg" alt="" />
+          <img
+            className="w-2/3"
+            src="https://i.ibb.co/z21HQ8k/6300830.jpg"
+            alt=""
+          />
         </div>
         <form
           onSubmit={handleRegister}
-          className="card flex-shrink-0 w-full max-w-sm border-2 bg-base-100">
+          className="card flex-shrink-0 w-full max-w-sm shadow-lg bg-base-100">
           <div className="card-body ">
             <div className="form-control">
               <label className="label">
@@ -36,7 +39,7 @@ const Register = () => {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="name"
-                className="input input-bordered"
+                className="input border-2 rounded border-gray-2 border-2 rounded border-gray-200 "
               />
             </div>
             <div className="form-control">
@@ -50,7 +53,7 @@ const Register = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="email"
-                className="input input-bordered"
+                className="input border-2 rounded border-gray-200 "
               />
             </div>
             <div className="form-control">
@@ -62,7 +65,7 @@ const Register = () => {
                 type="text"
                 name="password"
                 placeholder="password"
-                className="input input-bordered"
+                className="input border-2 rounded border-gray-200 "
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
