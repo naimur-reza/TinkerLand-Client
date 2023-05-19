@@ -5,7 +5,7 @@ export default function Banner() {
     <Carousel
       transition={{ duration: 2, type: "tween" }}
       autoplay
-      className="h-[calc(100vh-64px)] ">
+      className="h-[calc(100vh-96px)]">
       <div className="relative h-full w-full ">
         <img
           src="https://i.ibb.co/kQgp50b/action-figures-7243788-1920.jpg"
