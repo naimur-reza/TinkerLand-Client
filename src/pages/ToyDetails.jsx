@@ -6,10 +6,16 @@ import {
   Button,
 } from "@material-tailwind/react";
 import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigation } from "react-router-dom";
+import Loader from "../components/Loader";
 
 export default function ToyDetails() {
   const data = useLoaderData();
+  const navigation = useNavigation();
+  if (navigation.state === "loading") {
+    return <Loader />;
+  }
+  console.log(navigation.state);
   const {
     email,
     description,
