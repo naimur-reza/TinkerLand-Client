@@ -9,8 +9,16 @@ import {
 } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
 const ToyCard = ({ toy }) => {
-  const { _id, sub_category, seller_name, price, rating, imageURl, quantity } =
-    toy;
+  const {
+    _id,
+    sub_category,
+    name,
+    seller_name,
+    price,
+    rating,
+    imageURl,
+    quantity,
+  } = toy;
   return (
     <Card className="w-96 overflow-hidden">
       <CardHeader shadow={false} floated={false} className="h-96">
@@ -22,7 +30,7 @@ const ToyCard = ({ toy }) => {
       <CardBody>
         <div className="flex items-center justify-between mb-2">
           <Typography color="blue-gray" className="font-medium text-lg">
-            {sub_category}
+            {name}
           </Typography>
           <Typography color="blue-gray" className="font-medium text-xl">
             ${price}

@@ -24,7 +24,7 @@ const AddToys = () => {
   };
 
   return (
-    <div className="bg-cover  transformer min-h-[calc(100vh-96px)] ">
+    <div className="bg-cover  transformer min-h-[calc(100vh-96px)] pt-10 py-14">
       <div className="my-container ">
         <h1 className="text-center text-gray-200 pt-5  text-2xl w-[500px] tracking-wide  mx-auto">
           Add Toys: Expand Your Collection with Exciting New Additions
@@ -47,11 +47,18 @@ const AddToys = () => {
             <Input
               color="white"
               size="lg"
-              label="Seller Name"
-              {...register("seller_name")}
+              className="text"
+              label="Name"
+              {...register("name")}
             />
           </div>
           <div className="flex gap-5">
+            <Input
+              color="white"
+              size="lg"
+              label="Seller Name"
+              {...register("seller_name")}
+            />
             <Input
               color="white"
               size="lg"
@@ -59,12 +66,6 @@ const AddToys = () => {
               value={user?.email}
               aria-disabled={true}
               {...register("email")}
-            />
-            <Input
-              color="white"
-              size="lg"
-              label="Sub Category"
-              {...register("sub_category")}
             />
           </div>
           <div className="flex gap-5">
@@ -95,6 +96,12 @@ const AddToys = () => {
               {...register("description")}
             />
           </div>
+          <Input
+            color="white"
+            size="lg"
+            label="Sub Category"
+            {...register("sub_category")}
+          />
           <Button
             variant="gradient"
             color="deep-purple"

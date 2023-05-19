@@ -45,16 +45,9 @@ export default function SubCategory() {
             </Tab>
           ))}
         </TabsHeader>
-        <TabsBody>
-          {toys.map(({ value, toys }) => (
-            <TabPanel
-              className="flex gap-5 justify-center flex-col lg:flex-row"
-              key={value}
-              value={value}>
-              {toys.map((toy) => (
-                <ToyCard key={toy._id} toy={toy} />
-              ))}
-            </TabPanel>
+        <TabsBody className="grid grid-col-1 lg:grid-cols-3">
+          {toys.map((toy) => (
+            <ToyCard toy={toy} />
           ))}
         </TabsBody>
       </Tabs>
