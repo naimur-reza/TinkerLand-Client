@@ -11,7 +11,9 @@ import {
   rating,
 } from "@material-tailwind/react";
 import { FaPen, FaTrash } from "react-icons/fa";
+import Swal from "sweetalert2";
 const MyToys = () => {
+  const [render, setRender] = useState(false);
   const [toys, setToys] = useState([]);
   const [loading, SetLoading] = useState(false);
   const { user } = useContext(AuthContext);
@@ -24,10 +26,38 @@ const MyToys = () => {
         setToys(data);
         SetLoading(false);
       });
-  }, []);
+  }, [render]);
   if (loading) {
     return <Loader />;
   }
+
+  // handleUpdate toy form here
+  const handleUpdate = () => {};
+  const handleDelete = (id) => {
+    Swal.fire({
+      title: "Want to delete this toy?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/toys/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount) {
+              setRender(!render);
+              Swal.fire("Deleted!", "Your file has been deleted.", "success");
+            }
+          });
+      }
+    });
+  };
+
   return (
     <div className="grid  py-4 my-container">
       <Card className="overflow-scroll h-full w-full">
@@ -50,7 +80,10 @@ const MyToys = () => {
           </thead>
           <tbody>
             {toys.map(
-              ({ imageURl, sub_category, quantity, price, rating }, index) => (
+              (
+                { imageURl, sub_category, quantity, price, rating, _id },
+                index
+              ) => (
                 <tr key={sub_category} className="even:bg-blue-gray-50/50">
                   <td className="p-4">
                     <p>{index + 1}</p>
@@ -96,12 +129,15 @@ const MyToys = () => {
                   </td>
                   <td className="p-4 flex  items-center gap-4 pt-6">
                     <Tooltip content="Update Toy">
-                      <IconButton variant="outlined" color="gray">
+                      <IconButton
+                        onClick={handleUpdate}
+                        variant="outlined"
+                        color="gray">
                         <FaPen />
                       </IconButton>
                     </Tooltip>
                     <Tooltip content="Delete Toy">
-                      <IconButton variant="" color="red">
+                      <IconButton onClick={() => handleDelete(_id)} color="red">
                         <FaTrash />
                       </IconButton>
                     </Tooltip>
