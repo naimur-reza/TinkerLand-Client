@@ -51,7 +51,6 @@ const MyToys = () => {
           .then((data) => {
             if (data.deletedCount) {
               setRender(!render);
-              Swal.fire("Deleted!", "Your file has been deleted.", "success");
             }
           });
       }
