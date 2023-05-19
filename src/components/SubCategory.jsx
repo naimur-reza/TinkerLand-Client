@@ -5,60 +5,59 @@ import {
   Tab,
   TabPanel,
 } from "@material-tailwind/react";
-
+import { useEffect, useState } from "react";
+import ToyCard from "./ToyCard";
 export default function SubCategory() {
+  const [toys, setToys] = useState([]);
+  const [activeTab, setActiveTab] = useState(0);
   const data = [
     {
-      label: "HTML",
-      value: "html",
-      desc: `It really matters and then like it really doesn't matter.
-      What matters is the people who are sparked by it. And the people 
-      who are like offended by it, it doesn't matter.`,
+      label: "Avengers",
+      value: "avengers",
     },
     {
-      label: "React",
-      value: "react",
-      desc: `Because it's about motivating the doers. Because I'm here
-      to follow my dreams and inspire other people to follow their dreams, too.`,
+      label: "DC",
+      value: "dc",
     },
     {
-      label: "Vue",
-      value: "vue",
-      desc: `We're not always in the position that we want to be at.
-      We're constantly growing. We're constantly making mistakes. We're
-      constantly trying to express ourselves and actualize our dreams.`,
-    },
-    {
-      label: "Angular",
-      value: "angular",
-      desc: `Because it's about motivating the doers. Because I'm here
-      to follow my dreams and inspire other people to follow their dreams, too.`,
-    },
-    {
-      label: "Svelte",
-      value: "svelte",
-      desc: `We're not always in the position that we want to be at.
-      We're constantly growing. We're constantly making mistakes. We're
-      constantly trying to express ourselves and actualize our dreams.`,
+      label: "Marvel",
+      value: "marvel",
     },
   ];
 
+  useEffect(() => {
+    fetch(`http://localhost:5000/subToys?sub=${activeTab}`)
+      .then((res) => res.json())
+      .then((data) => setToys(data));
+    console.log(activeTab);
+  }, [activeTab]);
+
+  const handleSub = (e) => {};
+
   return (
-    <Tabs value="html">
-      <TabsHeader>
-        {data.map(({ label, value }) => (
-          <Tab key={value} value={value}>
-            {label}
-          </Tab>
-        ))}
-      </TabsHeader>
-      <TabsBody>
-        {data.map(({ value, desc }) => (
-          <TabPanel key={value} value={value}>
-            {desc}
-          </TabPanel>
-        ))}
-      </TabsBody>
-    </Tabs>
+    <div className="my-container py-10">
+      <h1 className="text-center text-3xl  pb-5">Toys Category</h1>
+      <Tabs value="html">
+        <TabsHeader>
+          {data.map(({ label, value }) => (
+            <Tab onClick={() => setActiveTab(label)} value={value} key={value}>
+              {label}
+            </Tab>
+          ))}
+        </TabsHeader>
+        <TabsBody>
+          {toys.map(({ value, toys }) => (
+            <TabPanel
+              className="flex gap-5 justify-center flex-col lg:flex-row"
+              key={value}
+              value={value}>
+              {toys.map((toy) => (
+                <ToyCard key={toy._id} toy={toy} />
+              ))}
+            </TabPanel>
+          ))}
+        </TabsBody>
+      </Tabs>
+    </div>
   );
 }
