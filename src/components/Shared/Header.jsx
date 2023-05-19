@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-
+import { AuthContext } from "../../providers/AuthProvider/AuthProvider";
+import { FaUser } from "react-icons/fa";
+import {
+  Button,
+  Menu,
+  MenuHandler,
+  MenuItem,
+  MenuList,
+  Tooltip,
+} from "@material-tailwind/react";
 const Header = () => {
+  const { user } = useContext(AuthContext);
+  console.log(user);
   return (
     <div className="navbar bg-black/90  text-gray-100 z-10 px-20 ">
       <div className="navbar-start">
@@ -54,7 +65,32 @@ const Header = () => {
       </div>
       <div className="navbar-end">
         <Link className="" to={"/profile"}>
-          Profile
+          {user.photoURL ? (
+            <Tooltip content={user.email}>
+              <img src={user.photoURL} alt="" />
+            </Tooltip>
+          ) : (
+            <Tooltip content={user.email} placement="left-start">
+              <Menu placement="bottom">
+                <MenuHandler>
+                  <Link>
+                    <Button
+                      variant="outlined"
+                      size="sm"
+                      color="gray"
+                      className="rounded-full">
+                      <FaUser className="text-lg" />
+                    </Button>
+                  </Link>
+                </MenuHandler>
+                <MenuList>
+                  <MenuItem>Menu Item 1</MenuItem>
+                  <MenuItem>Menu Item 2</MenuItem>
+                  <MenuItem>Menu Item 3</MenuItem>
+                </MenuList>
+              </Menu>
+            </Tooltip>
+          )}
         </Link>
       </div>
     </div>
