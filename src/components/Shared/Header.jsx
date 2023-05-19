@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider/AuthProvider";
-import { FaUser } from "react-icons/fa";
+import { FaSignInAlt, FaSignOutAlt, FaUser } from "react-icons/fa";
 import {
-  Button,
+  Avatar,
   Menu,
   MenuHandler,
   MenuItem,
@@ -11,7 +11,7 @@ import {
   Tooltip,
 } from "@material-tailwind/react";
 const Header = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
   console.log(user);
   return (
     <div className="navbar bg-black/90  text-gray-100 z-10 px-20 ">
@@ -64,34 +64,42 @@ const Header = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <Link className="" to={"/profile"}>
-          {user.photoURL ? (
-            <Tooltip content={user.email}>
-              <img src={user.photoURL} alt="" />
+        <Menu placement="bottom">
+          {user?.photoURL ? (
+            <Tooltip content={user?.displayName}>
+              <MenuHandler>
+                <Avatar className="cursor-pointer" src={user?.photoURL} />
+              </MenuHandler>
             </Tooltip>
           ) : (
-            <Tooltip content={user.email} placement="left-start">
-              <Menu placement="bottom">
-                <MenuHandler>
-                  <Link>
-                    <Button
-                      variant="outlined"
-                      size="sm"
-                      color="gray"
-                      className="rounded-full">
-                      <FaUser className="text-lg" />
-                    </Button>
-                  </Link>
-                </MenuHandler>
-                <MenuList>
-                  <MenuItem>Menu Item 1</MenuItem>
-                  <MenuItem>Menu Item 2</MenuItem>
-                  <MenuItem>Menu Item 3</MenuItem>
-                </MenuList>
-              </Menu>
+            <Tooltip content={user?.email} placement="left-start">
+              <MenuHandler>
+                <Link>
+                  <FaUser className="text-lg " />
+                </Link>
+              </MenuHandler>
             </Tooltip>
           )}
-        </Link>
+          <MenuList>
+            <MenuItem>
+              <Link to={"/profile"}>Profile</Link>
+            </MenuItem>
+            <MenuItem>Inbox</MenuItem>
+            {user ? (
+              <MenuItem
+                onClick={logOut}
+                className="inline-flex items-center gap-2">
+                {" "}
+                <FaSignOutAlt /> Sign Out
+              </MenuItem>
+            ) : (
+              <MenuItem className="inline-flex items-center gap-2">
+                {" "}
+                <FaSignInAlt /> <Link to={"/login"}>Sign In</Link>
+              </MenuItem>
+            )}
+          </MenuList>
+        </Menu>
       </div>
     </div>
   );

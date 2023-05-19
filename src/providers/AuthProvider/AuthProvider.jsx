@@ -10,6 +10,7 @@ import {
 } from "firebase/auth";
 import app from "../../utils/firebase/firebase.config";
 import { Navigate } from "react-router-dom";
+import { toast } from "react-hot-toast";
 
 export const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
@@ -34,17 +35,7 @@ const AuthProvider = ({ children }) => {
       .then((res) => {
         const loggedUser = res.user;
         setUser(loggedUser);
-        // fetch("http://localhost:5000/jwt", {
-        //   method: "POST",
-        //   headers: {
-        //     "content-type": "application/json",
-        //   },
-        //   body: JSON.stringify({ loggedUser }),
-        // })
-        // .then((res) => res.json())
-        // .then((data) => {
-        //   localStorage.setItem("car-access-token", data);
-        // });
+        toast.success("Login Successful");
       })
       .catch((err) => console.log(err));
   };

@@ -56,6 +56,8 @@ const AddToys = () => {
               color="white"
               size="lg"
               label="Email"
+              value={user?.email}
+              aria-disabled={true}
               {...register("email")}
             />
             <Input
