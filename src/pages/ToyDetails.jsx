@@ -6,16 +6,29 @@ import {
   Button,
 } from "@material-tailwind/react";
 import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
-import { useLoaderData, useNavigation } from "react-router-dom";
+import { useLoaderData, useNavigation, useParams } from "react-router-dom";
 import Loader from "../components/Loader";
+import { useEffect, useState } from "react";
 
 export default function ToyDetails() {
-  const data = useLoaderData();
-  const navigation = useNavigation();
-  if (navigation.state === "loading") {
+  const [loading, setLoading] = useState(false);
+  const [data, setData] = useState([]);
+  const { id } = useParams();
+  console.log(id);
+  useEffect(() => {
+    setLoading(true);
+    fetch(`http://localhost:5000/toys/${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data);
+        setLoading(false);
+      });
+  }, []);
+
+  console.log(data);
+  if (loading) {
     return <Loader />;
   }
-  console.log(navigation.state);
   const {
     email,
     description,
@@ -25,7 +38,7 @@ export default function ToyDetails() {
     sub_category,
     quantity,
     price,
-  } = data;
+  } = data || {};
   console.log(data);
   return (
     <Card className="flex-row w-full max-w-[48rem] my-container py-5">
