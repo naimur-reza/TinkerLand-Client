@@ -68,7 +68,11 @@ const Header = () => {
           {user?.photoURL ? (
             <Tooltip content={user?.displayName}>
               <MenuHandler>
-                <Avatar className="cursor-pointer" src={user?.photoURL} />
+                <Avatar
+                  withBorder={true}
+                  className="p-0.5 cursor-pointer"
+                  src={user?.photoURL}
+                />
               </MenuHandler>
             </Tooltip>
           ) : (

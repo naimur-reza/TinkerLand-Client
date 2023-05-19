@@ -11,6 +11,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import ToyDetails from "../pages/ToyDetails";
 import PrivateRoute from "./PrivateRoute";
+import Loader from "../components/Loader";
 
 const router = createBrowserRouter([
   // {
@@ -76,6 +77,10 @@ const router = createBrowserRouter([
       {
         path: "register",
         element: <Register />,
+      },
+      {
+        path: "loader",
+        element: <Loader />,
       },
     ],
   },
