@@ -66,7 +66,7 @@ const MyToys = () => {
 
   console.log(active);
   return (
-    <div className="grid  py-4 my-container">
+    <div className="grid  py-4 my-container pt-[110px]">
       <Card className="overflow-scroll h-full w-full">
         <table className="w-full min-w-max table-auto text-left">
           <thead>
@@ -166,7 +166,9 @@ const MyToys = () => {
                 <IconButton {...getItemProps(4)}>4</IconButton>
                 <IconButton {...getItemProps(5)}>5</IconButton> */}
             {iterator.map((item, index) => (
-              <IconButton {...getItemProps(index)}>{item + 1}</IconButton>
+              <IconButton variant="cyan" {...getItemProps(index)}>
+                {item + 1}
+              </IconButton>
             ))}
           </div>
           <Button

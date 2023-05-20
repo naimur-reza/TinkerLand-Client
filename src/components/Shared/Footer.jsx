@@ -1,8 +1,9 @@
 import { Typography } from "@material-tailwind/react";
 import logo from "../../assets/hulk.png";
+
 export default function Footer() {
   return (
-    <footer className="w-full p-8 bg-black/80">
+    <footer className="w-full p-8 bg-black ">
       <div className="flex flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12  text-center md:justify-between">
         <div>
           {" "}

@@ -38,7 +38,7 @@ const Login = () => {
     popUpGoogle();
   };
   return (
-    <div className="hero  my-container">
+    <div className="hero  my-container pt-[110px]">
       <div className="hero-content flex-col lg:flex-row justify-between">
         <div className="text-center ">
           <img

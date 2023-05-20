@@ -80,7 +80,7 @@ const MyToys = () => {
 
   return (
     <>
-      <div className="grid  py-4 my-container">
+      <div className="grid  py-4 my-container pt-[110px]">
         {/* <h1 className="text-xl text-center font-semibold py-4">My Toys</h1> */}
         <Card className="overflow-scroll h-full w-full">
           <table className="w-full min-w-max table-auto text-left">

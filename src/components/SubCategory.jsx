@@ -6,6 +6,7 @@ import {
   TabPanel,
 } from "@material-tailwind/react";
 import { useEffect, useState } from "react";
+import ironman from "../../src/assets/iron-man-5783522_1280.png";
 import ToyCard from "./ToyCard";
 export default function SubCategory() {
   const [toys, setToys] = useState([]);
@@ -32,11 +33,10 @@ export default function SubCategory() {
     console.log(activeTab);
   }, [activeTab]);
 
-  const handleSub = (e) => {};
-
   return (
     <div className="my-container py-10">
       <h1 className="text-center text-3xl  pb-5">Toys Category</h1>
+
       <Tabs value="html">
         <TabsHeader>
           {data.map(({ label, value }) => (

@@ -18,7 +18,7 @@ const Register = () => {
   };
   console.log(user);
   return (
-    <div className="hero min-h-screen my-container ">
+    <div className="hero min-h-screen my-container  pt-[110px]">
       <div className="hero-content flex-col lg:flex-row justify-between">
         <div className="text-center lg:text-left">
           <img
