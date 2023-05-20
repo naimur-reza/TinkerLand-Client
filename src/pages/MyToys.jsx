@@ -5,6 +5,8 @@ import {
   Avatar,
   Card,
   IconButton,
+  Option,
+  Select,
   Tooltip,
   Typography,
   rating,
@@ -28,7 +30,7 @@ const MyToys = () => {
 
   // loading State
   const [loading, SetLoading] = useState(false);
-
+  const [filter, setFilter] = useState("");
   const { user } = useContext(AuthContext);
   const TABLE_HEAD = [
     "#",
@@ -43,17 +45,17 @@ const MyToys = () => {
   ];
   useEffect(() => {
     SetLoading(true);
-    fetch(`http://localhost:5000/myToys?email=${user?.email}`)
+    fetch(`http://localhost:5000/myToys?email=${user?.email}&text=${filter}`)
       .then((res) => res.json())
       .then((data) => {
         setToys(data);
         SetLoading(false);
       });
-  }, [render]);
+  }, [render, filter]);
   if (loading) {
     return <Loader />;
   }
-
+  console.log(filter);
   // handleUpdate toy form her
   const handleDelete = (id) => {
     Swal.fire({
@@ -80,10 +82,25 @@ const MyToys = () => {
     });
   };
 
+  const handleSort = (e) => {
+    const text = e.target.value;
+    setFilter(text);
+  };
   return (
     <>
       <div className="grid  py-4 my-container pt-[110px]">
-        {/* <h1 className="text-xl text-center font-semibold py-4">My Toys</h1> */}
+        <div className="flex justify-between items-center py-5">
+          <h1>My Toys</h1>
+          <select
+            onChange={handleSort}
+            className="select select-bordered w-full max-w-xs text-gray-600">
+            <option disabled selected>
+              Filter
+            </option>
+            <option>Price: Low To High</option>
+            <option>Price: High To Low</option>
+          </select>
+        </div>
         <Card className="overflow-scroll h-full w-full">
           <table className="w-full min-w-max table-auto text-left">
             <thead>
@@ -104,7 +121,7 @@ const MyToys = () => {
             </thead>
             <tbody>
               {toys.map((toy, index) => (
-                <tr key={toy?.sub_category} className="even:bg-blue-gray-50/50">
+                <tr key={index} className="even:bg-blue-gray-50/50">
                   <td className="p-4">
                     <p>{index + 1}</p>
                   </td>

@@ -12,6 +12,7 @@ const AddToys = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
+    const form = data.target;
     fetch("http://localhost:5000/toys", {
       method: "POST",
       headers: {
@@ -21,6 +22,8 @@ const AddToys = () => {
     })
       .then((res) => res.json())
       .then((data) => console.log(data));
+    console.log(data);
+    form.reset();
   };
 
   return (
@@ -42,13 +45,13 @@ const AddToys = () => {
               size="lg"
               className="text"
               label="Name"
-              {...register("name")}
+              {...register("name", { required: true })}
             />
             <Input
               color="white"
               size="lg"
               label="Sub Category"
-              {...register("sub_category")}
+              {...register("sub_category", { required: true })}
             />
           </div>
           <div className="flex gap-5">
@@ -56,7 +59,7 @@ const AddToys = () => {
               color="white"
               size="lg"
               label="Seller Name"
-              {...register("seller_name")}
+              {...register("seller_name", { required: true })}
             />
             <Input
               color="white"
@@ -64,7 +67,7 @@ const AddToys = () => {
               label="Email"
               value={user?.email}
               aria-disabled={true}
-              {...register("email")}
+              {...register("email", { required: true })}
             />
           </div>
           <div className="flex gap-5">
@@ -72,13 +75,13 @@ const AddToys = () => {
               color="white"
               size="lg"
               label="Price"
-              {...register("price")}
+              {...register("price", { valueAsNumber: true, required: true })}
             />
             <Input
               color="white"
               size="lg"
               label="Rating"
-              {...register("rating")}
+              {...register("rating", { required: true })}
             />
           </div>
           <div className="flex gap-5">
@@ -86,13 +89,13 @@ const AddToys = () => {
               color="white"
               size="lg"
               label="Available Quantity"
-              {...register("quantity")}
+              {...register("quantity", { required: true })}
             />
             <Input
               color="white"
               size="lg"
               label="Detail Description"
-              {...register("description")}
+              {...register("description", { required: true })}
             />
           </div>
           <Input
@@ -100,7 +103,7 @@ const AddToys = () => {
             size="lg"
             className="text"
             label="Image URL"
-            {...register("imageURl")}
+            {...register("imageURl", { required: true })}
           />
           <Button
             variant="gradient"

@@ -38,14 +38,14 @@ export default function SubCategory() {
       <h1 className="text-center text-3xl  pb-5">Toys Category</h1>
 
       <Tabs value="html">
-        <TabsHeader>
+        <TabsHeader defaultIndex={0}>
           {data.map(({ label, value }) => (
             <Tab onClick={() => setActiveTab(label)} value={value} key={value}>
               {label}
             </Tab>
           ))}
         </TabsHeader>
-        <TabsBody className="grid grid-col-1 lg:grid-cols-3">
+        <TabsBody className="grid grid-col-1 lg:grid-cols-3" defaultIndex={0}>
           {toys.map((toy) => (
             <ToyCard toy={toy} />
           ))}

@@ -4,6 +4,7 @@ import {
   CardBody,
   Typography,
   Button,
+  Rating,
 } from "@material-tailwind/react";
 import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
 import { useLoaderData, useNavigation, useParams } from "react-router-dom";
@@ -54,7 +55,7 @@ export default function ToyDetails() {
         </CardHeader>
         <CardBody>
           <p variant="h6" color="blue" className="uppercase mb-4">
-            startups
+            New Toy
           </p>
           <p color="blue-gray" className="mb-2 text-xl font-bold">
             {name}
@@ -74,7 +75,7 @@ export default function ToyDetails() {
             color="blue-gray"
             className="mb-2 flex items-center gap-2 ">
             Rating:
-            <FaStar /> {rating}
+            <Rating value={4} readonly /> {rating}
           </p>
           <p variant="h6" color="blue-gray" className="mb-2">
             Quantity: {quantity}
