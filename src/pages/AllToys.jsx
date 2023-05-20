@@ -9,12 +9,14 @@ import {
   Tooltip,
   Typography,
   Button,
+  Input,
 } from "@material-tailwind/react";
 import {
   FaArrowLeft,
   FaArrowRight,
   FaEye,
   FaPen,
+  FaSearch,
   FaTrash,
 } from "react-icons/fa";
 import Swal from "sweetalert2";
@@ -23,13 +25,13 @@ const MyToys = () => {
   const [active, setActive] = useState(0);
   const [render, setRender] = useState(false);
   const [toys, setToys] = useState([]);
+  const [search, setSearch] = useState("");
   const [loading, SetLoading] = useState(false);
   const { user } = useContext(AuthContext);
   // pagination work
   const { totalToys } = useLoaderData();
   const totalPages = Math.ceil(totalToys / 20);
   const iterator = [...Array(totalPages).keys()];
-  console.log(iterator, totalPages);
 
   const TABLE_HEAD = ["#", "Image", "Name", "Quantity", "Price", "Rating", ""];
   useEffect(() => {
@@ -63,10 +65,35 @@ const MyToys = () => {
 
     setActive(active - 1);
   };
-
-  console.log(active);
+  console.log(search);
+  const handleSearch = () => {
+    SetLoading(true);
+    fetch(`http://localhost:5000/toys?search=${search}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setToys(data);
+        SetLoading(false);
+      });
+  };
   return (
     <div className="grid  py-4 my-container pt-[110px]">
+      <div className="flex justify-between items-center px-3 py-5">
+        <div>All Toys</div>
+        <div className="flex items-center gap-2">
+          <Input
+            onChange={(e) => setSearch(e.target.value)}
+            size="lg"
+            label="Search Toy"
+          />
+          <Button
+            onClick={handleSearch}
+            variant="outlined"
+            size="lg"
+            className="flex justify-center">
+            <FaSearch />
+          </Button>
+        </div>
+      </div>
       <Card className="overflow-scroll h-full w-full">
         <table className="w-full min-w-max table-auto text-left">
           <thead>
