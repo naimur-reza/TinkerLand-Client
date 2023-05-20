@@ -8,3 +8,6 @@
 .my-link {
   @apply font-semibold tracking-wide;
 }
+.active {
+  @apply text-yellow-600 font-semibold underline underline-offset-4;
+}

@@ -9,6 +9,7 @@ import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
 import { useLoaderData, useNavigation, useParams } from "react-router-dom";
 import Loader from "../components/Loader";
 import { useEffect, useState } from "react";
+import { FaDollarSign } from "react-icons/fa";
 
 export default function ToyDetails() {
   const [loading, setLoading] = useState(false);
@@ -38,7 +39,9 @@ export default function ToyDetails() {
     sub_category,
     quantity,
     price,
+    name,
   } = data || {};
+  // picture, toy name, seller name, seller email, price, rating, available quantity, and detail description)
   console.log(data);
   return (
     <Card className="flex-row w-full max-w-[48rem] my-container py-5">
@@ -57,7 +60,23 @@ export default function ToyDetails() {
           startups
         </Typography>
         <Typography variant="h4" color="blue-gray" className="mb-2">
-          {sub_category}
+          {name}
+        </Typography>
+        <Typography variant="h4" color="blue-gray" className="mb-2">
+          Seller: {seller_name}
+        </Typography>
+        <Typography variant="h4" color="blue-gray" className="mb-2">
+          Email: {email}
+        </Typography>
+        <Typography variant="h4" color="blue-gray" className="mb-2">
+          Price: <FaDollarSign />
+          {price}
+        </Typography>
+        <Typography variant="h4" color="blue-gray" className="mb-2">
+          Rating: {rating}
+        </Typography>
+        <Typography variant="h4" color="blue-gray" className="mb-2">
+          Quantity: {quantity}
         </Typography>
         <Typography color="gray" className="font-normal mb-8">
           {description}

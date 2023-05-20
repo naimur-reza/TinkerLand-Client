@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider/AuthProvider";
-import ToyCard from "../components/ToyCard";
 import Loader from "../components/Loader";
 import {
   Avatar,
@@ -12,10 +11,21 @@ import {
 } from "@material-tailwind/react";
 import { FaPen, FaTrash } from "react-icons/fa";
 import Swal from "sweetalert2";
+import UpdateToy from "../components/UpdateToy";
 const MyToys = () => {
+  // delete and re-render state
   const [render, setRender] = useState(false);
+
+  // modal state
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(!open);
+
+  // /set Toy state
   const [toys, setToys] = useState([]);
+
+  // loading State
   const [loading, SetLoading] = useState(false);
+
   const { user } = useContext(AuthContext);
   const TABLE_HEAD = ["#", "Image", "Name", "Quantity", "Price", "Rating", ""];
   useEffect(() => {
@@ -32,7 +42,7 @@ const MyToys = () => {
   }
 
   // handleUpdate toy form here
-  const handleUpdate = () => {};
+  // const  = () => {};
   const handleDelete = (id) => {
     Swal.fire({
       title: "Want to delete this toy?",
@@ -58,96 +68,101 @@ const MyToys = () => {
   };
 
   return (
-    <div className="grid  py-4 my-container">
-      <Card className="overflow-scroll h-full w-full">
-        <table className="w-full min-w-max table-auto text-left">
-          <thead>
-            <tr>
-              {TABLE_HEAD.map((head) => (
-                <th
-                  key={head}
-                  className="border-b border-blue-gray-100 bg-blue-gray-50 p-4">
-                  <Typography
-                    variant="small"
-                    color="blue-gray"
-                    className="font-normal leading-none opacity-70">
-                    {head}
-                  </Typography>
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {toys.map(
-              (
-                { imageURl, sub_category, quantity, price, rating, _id },
-                index
-              ) => (
-                <tr key={sub_category} className="even:bg-blue-gray-50/50">
-                  <td className="p-4">
-                    <p>{index + 1}</p>
-                  </td>
-                  <td className="p-4">
-                    <Avatar
-                      src={imageURl}
-                      size="lg"
-                      className="border border-blue-gray-50 bg-blue-gray-50/50 object-contain p-1"
-                    />
-                  </td>
-                  <td className="p-4">
+    <>
+      <div className="grid  py-4 my-container">
+        <Card className="overflow-scroll h-full w-full">
+          <table className="w-full min-w-max table-auto text-left">
+            <thead>
+              <tr>
+                {TABLE_HEAD.map((head) => (
+                  <th
+                    key={head}
+                    className="border-b border-blue-gray-100 bg-blue-gray-50 p-4">
                     <Typography
                       variant="small"
                       color="blue-gray"
-                      className="font-normal">
-                      {sub_category}
+                      className="font-normal leading-none opacity-70">
+                      {head}
                     </Typography>
-                  </td>
-                  <td className="p-4">
-                    <Typography
-                      variant="small"
-                      color="blue-gray"
-                      className="font-normal">
-                      {quantity}
-                    </Typography>
-                  </td>
-                  <td className="p-4">
-                    <Typography
-                      variant="small"
-                      color="blue-gray"
-                      className="font-normal">
-                      {price}
-                    </Typography>
-                  </td>
-                  <td className="p-4">
-                    <Typography
-                      variant="small"
-                      color="blue-gray"
-                      className="font-normal">
-                      {rating}
-                    </Typography>
-                  </td>
-                  <td className="p-4 flex  items-center gap-4 pt-6">
-                    <Tooltip content="Update Toy">
-                      <IconButton
-                        onClick={handleUpdate}
-                        variant="outlined"
-                        color="gray">
-                        <FaPen />
-                      </IconButton>
-                    </Tooltip>
-                    <Tooltip content="Delete Toy">
-                      <IconButton onClick={() => handleDelete(_id)} color="red">
-                        <FaTrash />
-                      </IconButton>
-                    </Tooltip>
-                  </td>
-                </tr>
-              )
-            )}
-          </tbody>
-        </table>
-      </Card>
-    </div>
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {toys.map(
+                (
+                  { imageURl, sub_category, quantity, price, rating, _id },
+                  index
+                ) => (
+                  <tr key={sub_category} className="even:bg-blue-gray-50/50">
+                    <td className="p-4">
+                      <p>{index + 1}</p>
+                    </td>
+                    <td className="p-4">
+                      <Avatar
+                        src={imageURl}
+                        size="lg"
+                        className="border border-blue-gray-50 bg-blue-gray-50/50 object-contain p-1"
+                      />
+                    </td>
+                    <td className="p-4">
+                      <Typography
+                        variant="small"
+                        color="blue-gray"
+                        className="font-normal">
+                        {sub_category}
+                      </Typography>
+                    </td>
+                    <td className="p-4">
+                      <Typography
+                        variant="small"
+                        color="blue-gray"
+                        className="font-normal">
+                        {quantity}
+                      </Typography>
+                    </td>
+                    <td className="p-4">
+                      <Typography
+                        variant="small"
+                        color="blue-gray"
+                        className="font-normal">
+                        {price}
+                      </Typography>
+                    </td>
+                    <td className="p-4">
+                      <Typography
+                        variant="small"
+                        color="blue-gray"
+                        className="font-normal">
+                        {rating}
+                      </Typography>
+                    </td>
+                    <td className="p-4 flex  items-center gap-4 pt-6">
+                      <Tooltip content="Update Toy">
+                        <IconButton
+                          onClick={handleOpen}
+                          variant="outlined"
+                          color="gray">
+                          <FaPen />
+                        </IconButton>
+                      </Tooltip>
+                      <Tooltip content="Delete Toy">
+                        <IconButton
+                          onClick={() => handleDelete(_id)}
+                          color="red">
+                          <FaTrash />
+                        </IconButton>
+                      </Tooltip>
+                    </td>
+                  </tr>
+                )
+              )}
+            </tbody>
+          </table>
+        </Card>
+      </div>
+      <UpdateToy open={open} handleOpen={handleOpen} />
+    </>
   );
 };
 

@@ -7,16 +7,12 @@ import {
   DialogFooter,
 } from "@material-tailwind/react";
 
-export default function Example() {
-  const [open, setOpen] = useState(false);
-
-  const handleOpen = () => setOpen(!open);
+export default function UpdateToy({ open, handleOpen }) {
+  //   const [open, setOpen] = useState(false);
+  //   const handleOpen = () => setOpen(!open);
 
   return (
     <Fragment>
-      <Button onClick={handleOpen} variant="gradient">
-        Open Dialog
-      </Button>
       <Dialog open={open} handler={handleOpen}>
         <DialogHeader>Its a simple dialog.</DialogHeader>
         <DialogBody divider>

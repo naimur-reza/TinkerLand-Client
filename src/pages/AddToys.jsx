@@ -41,15 +41,14 @@ const AddToys = () => {
               color="white"
               size="lg"
               className="text"
-              label="Image URL"
-              {...register("imageURl")}
+              label="Name"
+              {...register("name")}
             />
             <Input
               color="white"
               size="lg"
-              className="text"
-              label="Name"
-              {...register("name")}
+              label="Sub Category"
+              {...register("sub_category")}
             />
           </div>
           <div className="flex gap-5">
@@ -99,8 +98,9 @@ const AddToys = () => {
           <Input
             color="white"
             size="lg"
-            label="Sub Category"
-            {...register("sub_category")}
+            className="text"
+            label="Image URL"
+            {...register("imageURl")}
           />
           <Button
             variant="gradient"

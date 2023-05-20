@@ -10,7 +10,7 @@ export default function Banner() {
         <img
           src="https://i.ibb.co/kQgp50b/action-figures-7243788-1920.jpg"
           alt="image 1"
-          className="h-full w-full object-cover"
+          className="h-full w-full object-fill"
         />
         <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/40">
           <div className="w-3/4 text-center md:w-2/4">
@@ -44,7 +44,7 @@ export default function Banner() {
         <img
           src="https://i.ibb.co/0F3Rjjs/chris-hardy-H5-Ffv4-I5-ZMI-unsplash.jpg"
           alt="image 1"
-          className="h-full w-full object-cover"
+          className="h-full w-full object-fill"
         />
         <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/40">
           <div className="w-3/4 text-center md:w-2/4">
@@ -78,7 +78,7 @@ export default function Banner() {
         <img
           src="https://i.ibb.co/kDYhGQ8/mateusz-waclawek-t2b2sv-Mf8ek-unsplash.jpg"
           alt="image 2"
-          className="h-full w-full object-cover"
+          className="h-full w-full object-fill"
         />
         <div className="absolute inset-0 grid h-full w-full items-center bg-black/40">
           <div className="w-3/4 pl-12 md:w-2/4 md:pl-20 lg:pl-32">
@@ -112,7 +112,7 @@ export default function Banner() {
         <img
           src="https://i.ibb.co/ZzJy0SW/rachit-khurana-V3gb-V-ke-H10-unsplash.jpg"
           alt="image 3"
-          className="h-full w-full object-cover"
+          className="h-full w-full object-fill"
         />
         <div className="absolute inset-0 grid h-full w-full items-end bg-black/40">
           <div className="w-3/4 pl-12 pb-12 md:w-2/4 md:pl-20 md:pb-20 lg:pl-32 lg:pb-32">
@@ -146,7 +146,7 @@ export default function Banner() {
         <img
           src="https://i.ibb.co/fr63bZW/freestocks-CH6-cfi-Y2-Yo-unsplash.jpg"
           alt="image 3"
-          className="h-full w-full object-cover"
+          className="h-full w-full object-fill"
         />
         <div className="absolute inset-0 grid h-full w-full items-end bg-black/40">
           <div className="w-3/4 pl-12 pb-12 md:w-2/4 md:pl-20 md:pb-20 lg:pl-32 lg:pb-32">

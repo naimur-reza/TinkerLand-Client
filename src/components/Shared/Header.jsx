@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider/AuthProvider";
 import hulk from "../../assets/hulk.png";
 import { FaSignInAlt, FaSignOutAlt, FaUser } from "react-icons/fa";
@@ -35,7 +35,7 @@ const Header = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+            className="menu menu-compact dropdown-content mt-3 p-4 shadow bg-black text-white rounded-box w-52">
             <Link>Home</Link>
             <Link>All Toys</Link>
             <Link>My Toys</Link>
@@ -51,21 +51,31 @@ const Header = () => {
       </div>
       <div className="navbar-end hidden lg:flex">
         <ul className="menu menu-horizontal px-1 space-x-3">
-          <Link to={"/"} className="">
+          <NavLink
+            to={"/"}
+            className={({ isActive }) => (isActive ? "active" : "")}>
             Home
-          </Link>
-          <Link to={"/allToys"} className="">
+          </NavLink>
+          <NavLink
+            to={"/allToys"}
+            className={({ isActive }) => (isActive ? "active" : "")}>
             All Toys
-          </Link>
-          <Link to={"/myToys"} className="">
+          </NavLink>
+          <NavLink
+            to={"/myToys"}
+            className={({ isActive }) => (isActive ? "active" : "")}>
             My Toys
-          </Link>
-          <Link to={"/addToys"} className=" ">
+          </NavLink>
+          <NavLink
+            to={"/addToys"}
+            className={({ isActive }) => (isActive ? "active" : "")}>
             Add A Toys
-          </Link>
-          <Link to={"/blog"} className="">
+          </NavLink>
+          <NavLink
+            to={"/blog"}
+            className={({ isActive }) => (isActive ? "active" : "")}>
             Blog
-          </Link>
+          </NavLink>
         </ul>
       </div>
       <div className="navbar-end">
