@@ -15,6 +15,7 @@ import { FaPen, FaTrash } from "react-icons/fa";
 import Swal from "sweetalert2/src/sweetalert2.js";
 import UpdateToy from "../components/UpdateToy";
 import { toast } from "react-hot-toast";
+import { Link } from "react-router-dom";
 const MyToys = () => {
   // delete and re-render state
   const [render, setRender] = useState(false);
@@ -165,13 +166,14 @@ const MyToys = () => {
                     </Typography>
                   </td>
                   <td className="">
-                    <IconButton
-                      className="ml-3"
-                      onClick={handleOpen}
-                      variant="outlined"
-                      color="gray">
-                      <FaPen />
-                    </IconButton>
+                    <Link to={`/updateToy/${toy._id}`}>
+                      <IconButton
+                        className="ml-3"
+                        variant="outlined"
+                        color="gray">
+                        <FaPen />
+                      </IconButton>
+                    </Link>
                   </td>
                   <td>
                     <IconButton
@@ -181,13 +183,6 @@ const MyToys = () => {
                       <FaTrash />
                     </IconButton>
                   </td>
-                  <UpdateToy
-                    setRender={setRender}
-                    render={render}
-                    open={open}
-                    toy={toy}
-                    handleOpen={handleOpen}
-                  />
                 </tr>
               ))}
             </tbody>

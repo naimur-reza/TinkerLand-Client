@@ -3,16 +3,17 @@ import { Button, Input } from "@material-tailwind/react";
 import { useForm } from "react-hook-form";
 import "../../src/App.css";
 import { AuthContext } from "../providers/AuthProvider/AuthProvider";
+import { toast } from "react-hot-toast";
 const AddToys = () => {
   const { user, loading } = useContext(AuthContext);
   const {
     register,
     handleSubmit,
     watch,
+    reset,
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    const form = data.target;
     fetch("http://localhost:5000/toys", {
       method: "POST",
       headers: {
@@ -21,9 +22,13 @@ const AddToys = () => {
       body: JSON.stringify(data),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        if (data.insertedId) {
+          toast.success("Successfully Toy Added");
+        }
+      });
     console.log(data);
-    form.reset();
+    reset();
   };
 
   return (
@@ -73,6 +78,7 @@ const AddToys = () => {
           <div className="flex gap-5">
             <Input
               color="white"
+              type="number"
               size="lg"
               label="Price"
               {...register("price", { valueAsNumber: true, required: true })}
@@ -87,6 +93,7 @@ const AddToys = () => {
           <div className="flex gap-5">
             <Input
               color="white"
+              type="number"
               size="lg"
               label="Available Quantity"
               {...register("quantity", { required: true })}
@@ -101,6 +108,7 @@ const AddToys = () => {
           <Input
             color="white"
             size="lg"
+            type="url"
             className="text"
             label="Image URL"
             {...register("imageURl", { required: true })}

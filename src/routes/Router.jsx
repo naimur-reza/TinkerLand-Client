@@ -12,6 +12,7 @@ import Register from "../pages/Register";
 import ToyDetails from "../pages/ToyDetails";
 import PrivateRoute from "./PrivateRoute";
 import Loader from "../components/Loader";
+import UpdateToy from "../components/UpdateToy";
 
 const router = createBrowserRouter([
   // {
@@ -76,6 +77,12 @@ const router = createBrowserRouter([
       {
         path: "register",
         element: <Register />,
+      },
+      {
+        path: "updateToy/:id",
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/toys/${params.id}`),
+        element: <UpdateToy />,
       },
       {
         path: "loader",
