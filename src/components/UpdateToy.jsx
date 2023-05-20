@@ -11,7 +11,13 @@ import {
 import { toast } from "react-hot-toast";
 import { useForm } from "react-hook-form";
 
-export default function UpdateToy({ open, handleOpen, toy }) {
+export default function UpdateToy({
+  open,
+  handleOpen,
+  toy,
+  setRender,
+  render,
+}) {
   const {
     register,
     handleSubmit,
@@ -19,10 +25,18 @@ export default function UpdateToy({ open, handleOpen, toy }) {
     formState: { errors },
   } = useForm();
 
-  const { name, quantity, rating, description, sub_category, imageURl, price } =
-    toy;
+  const {
+    name,
+    quantity,
+    rating,
+    description,
+    sub_category,
+    imageURl,
+    price,
+    _id,
+  } = toy;
   const onSubmit = (data) => {
-    fetch("http://localhost:5000/update", {
+    fetch(`http://localhost:5000/update/${_id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
@@ -30,8 +44,12 @@ export default function UpdateToy({ open, handleOpen, toy }) {
       body: JSON.stringify(data),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
-    toast.success("Done");
+      .then((data) => {
+        if (data.modifiedCount > 0) {
+          toast.success("Information Updated");
+          setRender(!render);
+        }
+      });
   };
   return (
     <Fragment>
@@ -62,7 +80,7 @@ export default function UpdateToy({ open, handleOpen, toy }) {
                 color="cyan"
                 size="lg"
                 label="Price"
-                defaultValue={price}
+                defaultValue={("$", price)}
                 {...register("price")}
               />
               <Input

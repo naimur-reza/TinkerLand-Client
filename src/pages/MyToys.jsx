@@ -123,7 +123,7 @@ const MyToys = () => {
                       variant="small"
                       color="blue-gray"
                       className="font-normal">
-                      {toy?.price}
+                      $ {toy?.price}
                     </Typography>
                   </td>
                   <td className="p-4">
@@ -151,7 +151,13 @@ const MyToys = () => {
                       </IconButton>
                     </Tooltip>
                   </td>
-                  <UpdateToy open={open} toy={toy} handleOpen={handleOpen} />
+                  <UpdateToy
+                    setRender={setRender}
+                    render={render}
+                    open={open}
+                    toy={toy}
+                    handleOpen={handleOpen}
+                  />
                 </tr>
               ))}
             </tbody>
