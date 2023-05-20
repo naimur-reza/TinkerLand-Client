@@ -9,7 +9,7 @@ import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
 import { useLoaderData, useNavigation, useParams } from "react-router-dom";
 import Loader from "../components/Loader";
 import { useEffect, useState } from "react";
-import { FaDollarSign } from "react-icons/fa";
+import { FaDollarSign, FaStar } from "react-icons/fa";
 
 export default function ToyDetails() {
   const [loading, setLoading] = useState(false);
@@ -44,11 +44,11 @@ export default function ToyDetails() {
   // picture, toy name, seller name, seller email, price, rating, available quantity, and detail description)
   console.log(data);
   return (
-    <Card className="flex-row w-full max-w-[48rem] my-container py-5">
+    <Card className="lg:flex-row flex-col  w-full max-w-[48rem] my-container py-5 px-5 lg:px-0 lg:py-0 my-10">
       <CardHeader
         shadow={false}
         floated={false}
-        className="w-2/5 shrink-0 m-0 rounded-r-none">
+        className="lg:w-2/5 shrink-0 m-0 lg:rounded-r-none rounded-lg">
         <img
           src={imageURl}
           alt="image"
@@ -56,31 +56,35 @@ export default function ToyDetails() {
         />
       </CardHeader>
       <CardBody>
-        <Typography variant="h6" color="blue" className="uppercase mb-4">
+        <p variant="h6" color="blue" className="uppercase mb-4">
           startups
-        </Typography>
-        <Typography variant="h4" color="blue-gray" className="mb-2">
+        </p>
+        <p color="blue-gray" className="mb-2 text-xl font-bold">
           {name}
-        </Typography>
-        <Typography variant="h4" color="blue-gray" className="mb-2">
+        </p>
+        <p color="blue-gray" className="mb-2">
           Seller: {seller_name}
-        </Typography>
-        <Typography variant="h4" color="blue-gray" className="mb-2">
+        </p>
+        <p color="blue-gray" className="mb-2">
           Email: {email}
-        </Typography>
-        <Typography variant="h4" color="blue-gray" className="mb-2">
+        </p>
+        <p color="blue-gray" className="mb-2 flex items-center gap-2">
           Price: <FaDollarSign />
           {price}
-        </Typography>
-        <Typography variant="h4" color="blue-gray" className="mb-2">
-          Rating: {rating}
-        </Typography>
-        <Typography variant="h4" color="blue-gray" className="mb-2">
+        </p>
+        <p
+          variant="h6"
+          color="blue-gray"
+          className="mb-2 flex items-center gap-2 ">
+          Rating:
+          <FaStar /> {rating}
+        </p>
+        <p variant="h6" color="blue-gray" className="mb-2">
           Quantity: {quantity}
-        </Typography>
-        <Typography color="gray" className="font-normal mb-8">
+        </p>
+        <p color="gray" className="font-normal mb-8">
           {description}
-        </Typography>
+        </p>
         <a href="#" className="inline-block">
           <Button variant="text" className="flex items-center gap-2">
             Learn More

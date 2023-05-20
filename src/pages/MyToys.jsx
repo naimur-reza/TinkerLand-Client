@@ -29,7 +29,17 @@ const MyToys = () => {
   const [loading, SetLoading] = useState(false);
 
   const { user } = useContext(AuthContext);
-  const TABLE_HEAD = ["#", "Image", "Name", "Quantity", "Price", "Rating", ""];
+  const TABLE_HEAD = [
+    "#",
+    "Image",
+    "Name",
+    "Quantity",
+    "Price",
+    "Rating",
+    "Edit",
+    "Action",
+    "",
+  ];
   useEffect(() => {
     SetLoading(true);
     fetch(`http://localhost:5000/myToys?email=${user?.email}`)
@@ -71,6 +81,7 @@ const MyToys = () => {
   return (
     <>
       <div className="grid  py-4 my-container">
+        {/* <h1 className="text-xl text-center font-semibold py-4">My Toys</h1> */}
         <Card className="overflow-scroll h-full w-full">
           <table className="w-full min-w-max table-auto text-left">
             <thead>
@@ -134,22 +145,22 @@ const MyToys = () => {
                       {toy?.rating}
                     </Typography>
                   </td>
-                  <td className="p-4 flex  items-center gap-4 pt-6">
-                    <Tooltip content="Update Toy">
-                      <IconButton
-                        onClick={handleOpen}
-                        variant="outlined"
-                        color="gray">
-                        <FaPen />
-                      </IconButton>
-                    </Tooltip>
-                    <Tooltip content="Delete Toy">
-                      <IconButton
-                        onClick={() => handleDelete(toy?._id)}
-                        color="red">
-                        <FaTrash />
-                      </IconButton>
-                    </Tooltip>
+                  <td className="">
+                    <IconButton
+                      className="ml-3"
+                      onClick={handleOpen}
+                      variant="outlined"
+                      color="gray">
+                      <FaPen />
+                    </IconButton>
+                  </td>
+                  <td>
+                    <IconButton
+                      className="ml-3"
+                      onClick={() => handleDelete(toy?._id)}
+                      color="red">
+                      <FaTrash />
+                    </IconButton>
                   </td>
                   <UpdateToy
                     setRender={setRender}
