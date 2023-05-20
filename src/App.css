@@ -8,3 +8,13 @@
   background-position: center;
   background-size: cover;
 }
+.spider {
+  background-size: cover;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.565), rgba(0, 0, 0, 0.491)),
+    url("https://i.ibb.co/6Yqy7Nr/jossue-velasquez-o-Kpw-Fma-KU-c-unsplash.jpg");
+  height: calc(100vh-96px);
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}

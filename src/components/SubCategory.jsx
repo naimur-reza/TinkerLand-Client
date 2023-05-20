@@ -6,7 +6,7 @@ import {
   TabPanel,
 } from "@material-tailwind/react";
 import { useEffect, useState } from "react";
-import ironman from "../../src/assets/iron-man-5783522_1280.png";
+
 import ToyCard from "./ToyCard";
 export default function SubCategory() {
   const [toys, setToys] = useState([]);
@@ -45,7 +45,9 @@ export default function SubCategory() {
             </Tab>
           ))}
         </TabsHeader>
-        <TabsBody className="grid grid-col-1 lg:grid-cols-3" defaultIndex={0}>
+        <TabsBody
+          className="grid grid-col-1 lg:grid-cols-3 gap-7 py-5"
+          defaultIndex={0}>
           {toys.map((toy) => (
             <ToyCard toy={toy} />
           ))}

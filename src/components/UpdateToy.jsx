@@ -1,25 +1,18 @@
 import { Fragment, useEffect, useState } from "react";
-import {
-  Button,
-  Dialog,
-  DialogHeader,
-  DialogBody,
-  DialogFooter,
-  Input,
-} from "@material-tailwind/react";
-
+import { Button, DialogFooter, Input } from "@material-tailwind/react";
+import "../../src/App.css";
 import { toast } from "react-hot-toast";
 import { useForm } from "react-hook-form";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigation } from "react-router-dom";
+import Loader from "./Loader";
 
 export default function UpdateToy() {
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit } = useForm();
   const toy = useLoaderData();
+  const navigate = useNavigation();
+  if (navigate.state === "loading") {
+    return <Loader />;
+  }
   const {
     name,
     quantity,
@@ -42,20 +35,26 @@ export default function UpdateToy() {
       .then((data) => {
         if (data.modifiedCount > 0) {
           toast.success("Information Updated");
-          setRender(!render);
         }
       });
   };
+
+  const [loading, setLoading] = useState(false);
+  if (!toy) {
+    return <Loader />;
+  }
   return (
     <>
-      <div className="pt-[120px] px-10">
-        <h1 className="text-2xl text-center font-semibold py-5">
+      <div className="pt-[120px] spider">
+        <h1 className="text-3xl text-center font-semibold py-5 text-white">
           Update This Toy
         </h1>
-        <form className="space-y-5 " onSubmit={handleSubmit(onSubmit)}>
+        <form
+          className="space-y-5 my-container"
+          onSubmit={handleSubmit(onSubmit)}>
           <div className="flex gap-5 ">
             <Input
-              color="cyan"
+              color="white"
               defaultValue={name}
               size="lg"
               className="text"
@@ -64,7 +63,7 @@ export default function UpdateToy() {
             />
             <Input
               defaultValue={sub_category}
-              color="cyan"
+              color="white"
               size="lg"
               label="Sub Category"
               {...register("sub_category")}
@@ -73,14 +72,14 @@ export default function UpdateToy() {
 
           <div className="flex gap-5">
             <Input
-              color="cyan"
+              color="white"
               size="lg"
               label="Price"
               defaultValue={("$", price)}
               {...register("price")}
             />
             <Input
-              color="cyan"
+              color="white"
               size="lg"
               label="Rating"
               defaultValue={rating}
@@ -89,14 +88,14 @@ export default function UpdateToy() {
           </div>
           <div className="flex gap-5">
             <Input
-              color="cyan"
+              color="white"
               size="lg"
               label="Available Quantity"
               defaultValue={quantity}
               {...register("quantity")}
             />
             <Input
-              color="cyan"
+              color="white"
               size="lg"
               defaultValue={description}
               label="Detail Description"
@@ -104,7 +103,7 @@ export default function UpdateToy() {
             />
           </div>
           <Input
-            color="cyan"
+            color="white"
             defaultValue={imageURl}
             size="lg"
             className="text"
@@ -113,9 +112,11 @@ export default function UpdateToy() {
           />
           <hr />
           <DialogFooter>
-            <Button variant="text" color="red" className="mr-1">
-              <span>Cancel</span>
-            </Button>
+            <Link to={`/myToys`}>
+              <Button variant="outlined" color="red" className="mr-1">
+                Cancel
+              </Button>
+            </Link>
             <Button type="submit" variant="gradient" color="cyan">
               <span>Update</span>
             </Button>
