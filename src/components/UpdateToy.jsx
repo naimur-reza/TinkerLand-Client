@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import {
   Button,
   Dialog,
@@ -11,23 +11,26 @@ import {
 import { toast } from "react-hot-toast";
 import { useForm } from "react-hook-form";
 
-export default function UpdateToy({ open, handleOpen }) {
+export default function UpdateToy({ open, handleOpen, toy }) {
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
   } = useForm();
+
+  const { name, quantity, rating, description, sub_category, imageURl, price } =
+    toy;
   const onSubmit = (data) => {
-    // fetch("http://localhost:5000/toys", {
-    //   method: "POST",
-    //   headers: {
-    //     "content-type": "application/json",
-    //   },
-    //   body: JSON.stringify(data),
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => console.log(data));
+    fetch("http://localhost:5000/update", {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
     toast.success("Done");
   };
   return (
@@ -39,12 +42,14 @@ export default function UpdateToy({ open, handleOpen }) {
             <div className="flex gap-5 ">
               <Input
                 color="cyan"
+                defaultValue={name}
                 size="lg"
                 className="text"
                 label="Name"
                 {...register("name")}
               />
               <Input
+                defaultValue={sub_category}
                 color="cyan"
                 size="lg"
                 label="Sub Category"
@@ -57,12 +62,14 @@ export default function UpdateToy({ open, handleOpen }) {
                 color="cyan"
                 size="lg"
                 label="Price"
+                defaultValue={price}
                 {...register("price")}
               />
               <Input
                 color="cyan"
                 size="lg"
                 label="Rating"
+                defaultValue={rating}
                 {...register("rating")}
               />
             </div>
@@ -71,17 +78,20 @@ export default function UpdateToy({ open, handleOpen }) {
                 color="cyan"
                 size="lg"
                 label="Available Quantity"
+                defaultValue={quantity}
                 {...register("quantity")}
               />
               <Input
                 color="cyan"
                 size="lg"
+                defaultValue={description}
                 label="Detail Description"
                 {...register("description")}
               />
             </div>
             <Input
               color="cyan"
+              defaultValue={imageURl}
               size="lg"
               className="text"
               label="Image URL"
