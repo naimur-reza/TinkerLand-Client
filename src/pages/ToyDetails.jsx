@@ -44,54 +44,52 @@ export default function ToyDetails() {
   // picture, toy name, seller name, seller email, price, rating, available quantity, and detail description)
   console.log(data);
   return (
-    <Card className="lg:flex-row flex-col  w-full max-w-[48rem] my-container py-5 px-5 lg:px-0 lg:py-0 my-10">
-      <CardHeader
-        shadow={false}
-        floated={false}
-        className="lg:w-2/5 shrink-0 m-0 lg:rounded-r-none rounded-lg">
-        <img
-          src={imageURl}
-          alt="image"
-          className="w-full h-full object-cover"
-        />
-      </CardHeader>
-      <CardBody>
-        <p variant="h6" color="blue" className="uppercase mb-4">
-          startups
-        </p>
-        <p color="blue-gray" className="mb-2 text-xl font-bold">
-          {name}
-        </p>
-        <p color="blue-gray" className="mb-2">
-          Seller: {seller_name}
-        </p>
-        <p color="blue-gray" className="mb-2">
-          Email: {email}
-        </p>
-        <p color="blue-gray" className="mb-2 flex items-center gap-2">
-          Price: <FaDollarSign />
-          {price}
-        </p>
-        <p
-          variant="h6"
-          color="blue-gray"
-          className="mb-2 flex items-center gap-2 ">
-          Rating:
-          <FaStar /> {rating}
-        </p>
-        <p variant="h6" color="blue-gray" className="mb-2">
-          Quantity: {quantity}
-        </p>
-        <p color="gray" className="font-normal mb-8">
-          {description}
-        </p>
-        <a href="#" className="inline-block">
-          <Button variant="text" className="flex items-center gap-2">
-            Learn More
-            <ArrowLongRightIcon strokeWidth={2} className="w-4 h-4" />
-          </Button>
-        </a>
-      </CardBody>
-    </Card>
+    <div className="pt-[110px] pb-5">
+      <Card className="lg:flex-row  flex-col  w-full max-w-[48rem] my-container py-5 px-5 lg:px-0 lg:py-0 ">
+        <CardHeader
+          shadow={false}
+          floated={false}
+          className="lg:w-2/6  shrink-0 m-0 lg:rounded-r-none rounded-lg">
+          <img src={imageURl} alt="image" className="w-full h-full object-" />
+        </CardHeader>
+        <CardBody>
+          <p variant="h6" color="blue" className="uppercase mb-4">
+            startups
+          </p>
+          <p color="blue-gray" className="mb-2 text-xl font-bold">
+            {name}
+          </p>
+          <p color="blue-gray" className="mb-2">
+            Seller: {seller_name}
+          </p>
+          <p color="blue-gray" className="mb-2">
+            Email: {email}
+          </p>
+          <p color="blue-gray" className="mb-2 flex items-center gap-2">
+            Price: <FaDollarSign />
+            {price}
+          </p>
+          <p
+            variant="h6"
+            color="blue-gray"
+            className="mb-2 flex items-center gap-2 ">
+            Rating:
+            <FaStar /> {rating}
+          </p>
+          <p variant="h6" color="blue-gray" className="mb-2">
+            Quantity: {quantity}
+          </p>
+          <p color="gray" className="font-normal mb-8">
+            {description}
+          </p>
+          <a href="#" className="inline-block">
+            <Button variant="text" className="flex items-center gap-2">
+              Learn More
+              <ArrowLongRightIcon strokeWidth={2} className="w-4 h-4" />
+            </Button>
+          </a>
+        </CardBody>
+      </Card>
+    </div>
   );
 }

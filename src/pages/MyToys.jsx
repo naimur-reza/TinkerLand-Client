@@ -10,8 +10,9 @@ import {
   rating,
 } from "@material-tailwind/react";
 import { FaPen, FaTrash } from "react-icons/fa";
-import Swal from "sweetalert2";
+import Swal from "sweetalert2/src/sweetalert2.js";
 import UpdateToy from "../components/UpdateToy";
+import { toast } from "react-hot-toast";
 const MyToys = () => {
   // delete and re-render state
   const [render, setRender] = useState(false);
@@ -58,7 +59,7 @@ const MyToys = () => {
     Swal.fire({
       title: "Want to delete this toy?",
       text: "You won't be able to revert this!",
-      icon: "warning",
+      icon: "question",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
@@ -72,6 +73,7 @@ const MyToys = () => {
           .then((data) => {
             if (data.deletedCount) {
               setRender(!render);
+              toast.success(`Deleted Successfully`);
             }
           });
       }
