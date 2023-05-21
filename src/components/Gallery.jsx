@@ -39,9 +39,8 @@ const Gallery = () => {
                 <img
                   className="hover:scale-105 duration-300"
                   key={i}
+                  offset="400"
                   data-aos-duration="500"
-                  // data-aos-easing="ease-in-out"
-                  data-aos-mirror="true"
                   data-aos="fade-left"
                   delay={delay - 70}
                   src={image}
