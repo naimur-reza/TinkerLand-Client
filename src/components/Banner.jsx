@@ -5,7 +5,7 @@ export default function Banner() {
   return (
     <Carousel
       transition={{ duration: 3, type: "tween" }}
-      className="h-[450px] lg:h-[100vh]"
+      className="h-[400px] lg:h-[100vh]"
       autoplay
       autoplayDelay={5500}>
       <div className="relative h-full w-full ">

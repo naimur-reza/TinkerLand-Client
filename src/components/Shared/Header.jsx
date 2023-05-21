@@ -17,7 +17,7 @@ const Header = () => {
   const { user, logOut } = useContext(AuthContext);
   console.log(user);
   return (
-    <div className="navbar bg-black/40 backdrop-blur-sm  text-gray-100 z-10 px-20 absolute">
+    <div className="navbar bg-black/40 backdrop-blur-sm  text-gray-100 z-10 lg:px-20 absolute">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -55,7 +55,7 @@ const Header = () => {
             </Link>
             <Link
               className={({ isActive }) => (isActive ? "active" : "")}
-              to={"/addToy"}>
+              to={"/addToys"}>
               Add A Toy
             </Link>
             <Link
@@ -102,7 +102,7 @@ const Header = () => {
       </div>
       <div className="navbar-end">
         <Menu placement="bottom">
-          {user?.photoURL ? (
+          {user ? (
             <Tooltip content={user?.displayName}>
               <MenuHandler>
                 <Avatar
