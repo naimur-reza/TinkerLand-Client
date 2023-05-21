@@ -1,17 +1,18 @@
 import { Carousel, Typography, Button } from "@material-tailwind/react";
+import { Link } from "react-router-dom";
 
 export default function Banner() {
   return (
     <Carousel
-      transition={{ duration: 2, type: "tween" }}
+      transition={{ duration: 3, type: "tween" }}
+      className="h-[450px] lg:h-[100vh]"
       autoplay
-      className="h-[calc(100vh)] 
-      ">
+      autoplayDelay={5500}>
       <div className="relative h-full w-full ">
         <img
           src="https://i.ibb.co/kQgp50b/action-figures-7243788-1920.jpg"
           alt="image 1"
-          className="h-full w-full object-fill"
+          className="h-full w-full object-center"
         />
         <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/40">
           <div className="w-3/4 text-center md:w-2/4">
@@ -19,22 +20,21 @@ export default function Banner() {
               variant="h1"
               color="white"
               className="mb-4 text-3xl md:text-4xl lg:text-5xl">
-              The Beauty of Nature
+              Endless Fun for Kids
             </Typography>
             <Typography
               variant="lead"
               color="white"
-              className="mb-12 opacity-80">
-              It is not so much for its beauty that the forest makes a claim
-              upon men&apos;s hearts, as for that subtle something, that quality
-              of air that emanation from old trees, that so wonderfully changes
-              and renews a weary spirit.
+              className="mb-12 opacity-80 tracking-wide">
+              Discover the Perfect Toys for Every Age and Interest
             </Typography>
             <div className="flex justify-center gap-2">
-              <Button size="lg" color="white">
-                Explore
-              </Button>
-              <Button size="lg" color="white" variant="text">
+              <Link to={"/allToys"}>
+                <Button size="md" color="white">
+                  Explore
+                </Button>
+              </Link>
+              <Button size="sm" color="white" variant="text">
                 Gallery
               </Button>
             </div>
@@ -53,22 +53,21 @@ export default function Banner() {
               variant="h1"
               color="white"
               className="mb-4 text-3xl md:text-4xl lg:text-5xl">
-              The Beauty of Nature
+              Imagination Unleashed
             </Typography>
             <Typography
               variant="lead"
               color="white"
               className="mb-12 opacity-80">
-              It is not so much for its beauty that the forest makes a claim
-              upon men&apos;s hearts, as for that subtle something, that quality
-              of air that emanation from old trees, that so wonderfully changes
-              and renews a weary spirit.
+              Ignite Creativity with our Exciting Range of Toys and Games
             </Typography>
             <div className="flex justify-center gap-2">
-              <Button size="lg" color="white">
-                Explore
-              </Button>
-              <Button size="lg" color="white" variant="text">
+              <Link to={"/allToys"}>
+                <Button size="md" color="white">
+                  Explore
+                </Button>
+              </Link>
+              <Button size="md" color="white" variant="text">
                 Gallery
               </Button>
             </div>
@@ -87,22 +86,21 @@ export default function Banner() {
               variant="h1"
               color="white"
               className="mb-4 text-3xl md:text-4xl lg:text-5xl">
-              The Beauty of Nature
+              Toys Galore!
             </Typography>
             <Typography
               variant="lead"
               color="white"
               className="mb-12 opacity-80">
-              It is not so much for its beauty that the forest makes a claim
-              upon men&apos;s hearts, as for that subtle something, that quality
-              of air that emanation from old trees, that so wonderfully changes
-              and renews a weary spirit.
+              Explore a World of Playfulness and Adventure
             </Typography>
             <div className="flex gap-2">
-              <Button size="lg" color="white">
-                Explore
-              </Button>
-              <Button size="lg" color="white" variant="text">
+              <Link to={"/allToys"}>
+                <Button size="md" color="white">
+                  Explore
+                </Button>
+              </Link>
+              <Button size="md" color="white" variant="text">
                 Gallery
               </Button>
             </div>
@@ -121,22 +119,21 @@ export default function Banner() {
               variant="h1"
               color="white"
               className="mb-4 text-3xl md:text-4xl lg:text-5xl">
-              The Beauty of Nature
+              Unforgettable Childhood Memories
             </Typography>
             <Typography
               variant="lead"
               color="white"
               className="mb-12 opacity-80">
-              It is not so much for its beauty that the forest makes a claim
-              upon men&apos;s hearts, as for that subtle something, that quality
-              of air that emanation from old trees, that so wonderfully changes
-              and renews a weary spirit.
+              Find Classic and Modern Toys that Make Every Moment Magical
             </Typography>
             <div className="flex gap-2">
-              <Button size="lg" color="white">
-                Explore
-              </Button>
-              <Button size="lg" color="white" variant="text">
+              <Link to={"/allToys"}>
+                <Button size="md" color="white">
+                  Explore
+                </Button>
+              </Link>
+              <Button size="md" color="white" variant="text">
                 Gallery
               </Button>
             </div>
@@ -155,22 +152,21 @@ export default function Banner() {
               variant="h1"
               color="white"
               className="mb-4 text-3xl md:text-4xl lg:text-5xl">
-              The Beauty of Nature
+              Educational Entertainment
             </Typography>
             <Typography
               variant="lead"
               color="white"
               className="mb-12 opacity-80">
-              It is not so much for its beauty that the forest makes a claim
-              upon men&apos;s hearts, as for that subtle something, that quality
-              of air that emanation from old trees, that so wonderfully changes
-              and renews a weary spirit.
+              Learning is Fun with our Engaging and Educational Toys
             </Typography>
             <div className="flex gap-2">
-              <Button size="lg" color="white">
-                Explore
-              </Button>
-              <Button size="lg" color="white" variant="text">
+              <Link to={"/allToys"}>
+                <Button size="md" color="white">
+                  Explore
+                </Button>
+              </Link>
+              <Button size="md" color="white" variant="text">
                 Gallery
               </Button>
             </div>

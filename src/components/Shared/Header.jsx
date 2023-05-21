@@ -6,6 +6,7 @@ import logo from "../../assets/logo.png";
 import { FaSignInAlt, FaSignOutAlt, FaUser } from "react-icons/fa";
 import {
   Avatar,
+  Button,
   Menu,
   MenuHandler,
   MenuItem,
@@ -16,7 +17,7 @@ const Header = () => {
   const { user, logOut } = useContext(AuthContext);
   console.log(user);
   return (
-    <div className="navbar bg-black/50  text-gray-100 z-10 px-20 absolute">
+    <div className="navbar bg-black/40 backdrop-blur-sm  text-gray-100 z-10 px-20 absolute">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -92,33 +93,32 @@ const Header = () => {
               </MenuHandler>
             </Tooltip>
           ) : (
-            <Tooltip content={user?.email} placement="left-start">
-              <MenuHandler>
-                <Link>
-                  <FaUser className="text-lg " />
-                </Link>
-              </MenuHandler>
-            </Tooltip>
+            ""
           )}
-          <MenuList>
-            <MenuItem>
-              <Link to={"/profile"}>Profile</Link>
-            </MenuItem>
-            <MenuItem>Inbox</MenuItem>
-            {user ? (
+
+          {user ? (
+            <MenuList>
+              <MenuItem>
+                <Link to={"/profile"}>Profile</Link>
+              </MenuItem>
+              <MenuItem>Inbox</MenuItem>
               <MenuItem
                 onClick={logOut}
                 className="inline-flex items-center gap-2">
                 {" "}
                 <FaSignOutAlt /> Sign Out
               </MenuItem>
-            ) : (
-              <MenuItem className="inline-flex items-center gap-2">
-                {" "}
-                <FaSignInAlt /> <Link to={"/login"}>Sign In</Link>
-              </MenuItem>
-            )}
-          </MenuList>
+            </MenuList>
+          ) : (
+            <Button
+              variant="outlined"
+              color="orange"
+              size="sm"
+              className="inline-flex items-center gap-2">
+              {" "}
+              <FaSignInAlt /> <Link to={"/login"}>Sign In</Link>
+            </Button>
+          )}
         </Menu>
       </div>
     </div>

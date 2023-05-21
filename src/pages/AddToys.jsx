@@ -32,8 +32,8 @@ const AddToys = () => {
   };
 
   return (
-    <div className="bg-cover  transformer min-h-[calc(100vh-96px)] pt-[120px] py-14 ">
-      <div className="my-container ">
+    <div className="bg-cover  transformer min-h-[calc(100vh-96px)] pt-[100px] py-14 ">
+      <div className="my-container  bg-white/10 p-8 rounded-lg backdrop-blur-sm">
         <h1 className="text-center text-gray-200 pt-5  text-2xl w-[500px] tracking-wide  mx-auto">
           Add Toys: Expand Your Collection with Exciting New Additions
         </h1>

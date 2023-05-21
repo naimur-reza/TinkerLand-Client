@@ -24,18 +24,25 @@ const Gallery = () => {
     "https://i.ibb.co/Hp74mVx/Iron-Fist-Immortal-Weapon-Avengers-Custom-Action-Figure.png",
     "https://i.ibb.co/3cqwyms/d6530d8e-0a88-4df3-8550-059f6a827a0d.jpg",
   ];
+  const delay = 600;
   return (
     <>
       <h1 className="text-3xl font-bold pb-10 text-center pt-14">
-        Action Figure Gallery
+        Action Figure <span className="text-orange-500">Gallery</span>
       </h1>
-      <div className="my-container">
+      <div className="my-container overflow-hidden">
         <ResponsiveMasonry columnsCountBreakPoints={{ 350: 3, 750: 2, 900: 5 }}>
           <Masonry gutter="10px">
             {images.map((image, i) => (
               <img
                 className="hover:scale-105 duration-300"
                 key={i}
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out"
+                data-aos-mirror="true"
+                data-aos-once="false"
+                data-aos="fade-left"
+                delay={delay - 70}
                 src={image}
                 style={{ width: "100%", display: "block" }}
                 alt=""

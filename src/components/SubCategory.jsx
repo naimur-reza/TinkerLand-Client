@@ -6,7 +6,8 @@ import {
   TabPanel,
 } from "@material-tailwind/react";
 import { useEffect, useState } from "react";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 import ToyCard from "./ToyCard";
 export default function SubCategory() {
   const [toys, setToys] = useState();
@@ -35,7 +36,9 @@ export default function SubCategory() {
 
   return (
     <div className="my-container py-10">
-      <h1 className="text-center text-3xl  pb-5">Toys Category</h1>
+      <h1 className="text-center font-bold text-3xl  pb-5">
+        Shop By <span className="text-orange-600 ">Category</span>
+      </h1>
 
       <Tabs value="html">
         <TabsHeader>

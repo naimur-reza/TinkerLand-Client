@@ -38,6 +38,7 @@ const Login = () => {
           onSubmit={handleLogin}
           className="card flex-shrink-0 w-full max-w-sm bg-base-100 shadow-lg">
           <div className="card-body ">
+            <p>Login</p>
             <div className="form-control">
               <Input
                 label="Email"
@@ -81,7 +82,10 @@ const Login = () => {
                 />
               </div>
               <p className="my-text text-center py-3">
-                New To Here? <Link to={"/register"}>Register</Link>
+                New To Here?{" "}
+                <Link className="active" to={"/register"}>
+                  Register
+                </Link>
               </p>
             </div>
           </div>
