@@ -10,16 +10,18 @@ import Marquee from "react-fast-marquee";
 
 export default function CustomerReview() {
   return (
-    <div className="py-14">
-      <h1 className="text-3xl text-center font-semibold ">Voices of Delight</h1>
-      <p className="opacity-70 text-center  pt-2 pb-5">
+    <div className="py-14 bg-black">
+      <h1 className="text-3xl text-center font-semibold text-gray-200">
+        Voices of Delight
+      </h1>
+      <p className="opacity-70 text-center  pt-2 pb-5 text-gray-400 px-10">
         Unforgettable Experiences Shared by Our Valued Customers
       </p>
       <Marquee>
         <Card
           color="transparent"
           shadow={false}
-          className="w-full border-2 p-5 max-w-[26rem] mx-3">
+          className="w-full  p-5 max-w-[26rem] mx-3 bg-white/10  backdrop-blur-sm">
           <CardHeader
             color="transparent"
             floated={false}
@@ -33,8 +35,8 @@ export default function CustomerReview() {
             />
             <div className="flex w-full flex-col gap-0.5">
               <div className="flex items-center justify-between">
-                <Typography variant="h5" color="blue-gray">
-                  Candice Wu
+                <Typography variant="h5" className="text-gray-200">
+                  Liam Thomas
                 </Typography>
                 <div className="5 flex items-center gap-0">
                   <StarIcon className="h-5 w-5 text-yellow-700" />
@@ -44,11 +46,13 @@ export default function CustomerReview() {
                   <StarIcon className="h-5 w-5 text-yellow-700" />
                 </div>
               </div>
-              <Typography color="blue-gray">Frontend Lead @ Google</Typography>
+              <Typography className="text-gray-400">
+                Manager @ Toy Village
+              </Typography>
             </div>
           </CardHeader>
           <CardBody className="mb-6 p-0 h-32">
-            <Typography>
+            <Typography className="text-gray-400">
               I recently purchased the action figure toy from this site, and I'm
               blown away! The attention to detail is incredible, and the
               articulation allows for dynamic poses. This is definitely a
@@ -59,7 +63,7 @@ export default function CustomerReview() {
         <Card
           color="transparent"
           shadow={false}
-          className="w-full border-2 p-5 max-w-[26rem] mx-3">
+          className="w-full  p-5 max-w-[26rem] mx-3 bg-white/10  backdrop-blur-sm">
           <CardHeader
             color="transparent"
             floated={false}
@@ -73,8 +77,8 @@ export default function CustomerReview() {
             />
             <div className="flex w-full flex-col gap-0.5">
               <div className="flex items-center justify-between">
-                <Typography variant="h5" color="blue-gray">
-                  Candice Wu
+                <Typography variant="h5" className="text-gray-200">
+                  Sophia Wilson
                 </Typography>
                 <div className="5 flex items-center gap-0">
                   <StarIcon className="h-5 w-5 text-yellow-700" />
@@ -84,11 +88,13 @@ export default function CustomerReview() {
                   <StarIcon className="h-5 w-5 text-yellow-700" />
                 </div>
               </div>
-              <Typography color="blue-gray">Frontend Lead @ Google</Typography>
+              <Typography className="text-gray-400">
+                Frontend Lead @ ToyUniverse
+              </Typography>
             </div>
           </CardHeader>
           <CardBody className="mb-6 p-0 h-32">
-            <Typography>
+            <Typography className="text-gray-400">
               I've been collecting action figures for years, and this one stands
               out among the rest. The quality of the materials used is
               top-notch, and the paint job is flawless. It's definitely worth
@@ -99,7 +105,7 @@ export default function CustomerReview() {
         <Card
           color="transparent"
           shadow={false}
-          className="w-full border-2 p-5 max-w-[26rem] mx-3">
+          className="w-full  p-5 max-w-[26rem] mx-3 bg-white/10  backdrop-blur-sm">
           <CardHeader
             color="transparent"
             floated={false}
@@ -113,8 +119,8 @@ export default function CustomerReview() {
             />
             <div className="flex w-full flex-col gap-0.5">
               <div className="flex items-center justify-between">
-                <Typography variant="h5" color="blue-gray">
-                  Candice Wu
+                <Typography variant="h5" className="text-gray-200">
+                  Noah Davis
                 </Typography>
                 <div className="5 flex items-center gap-0">
                   <StarIcon className="h-5 w-5 text-yellow-700" />
@@ -124,11 +130,11 @@ export default function CustomerReview() {
                   <StarIcon className="h-5 w-5 text-yellow-700" />
                 </div>
               </div>
-              <Typography color="blue-gray">Frontend Lead @ Google</Typography>
+              <Typography className="text-gray-400">CEO @ ToyMania</Typography>
             </div>
           </CardHeader>
           <CardBody className="mb-6 p-0 h-32">
-            <Typography>
+            <Typography className="text-gray-400">
               I bought this action figure toy as a gift for my son, and he
               absolutely loves it! The durability is impressive, and it's been
               able to withstand his rough play. It's become his new favorite
@@ -139,7 +145,7 @@ export default function CustomerReview() {
         <Card
           color="transparent"
           shadow={false}
-          className="w-full border-2 p-5 max-w-[26rem] mx-3">
+          className="w-full  p-5 max-w-[26rem] mx-3 bg-white/10  backdrop-blur-sm">
           <CardHeader
             color="transparent"
             floated={false}
@@ -153,8 +159,8 @@ export default function CustomerReview() {
             />
             <div className="flex w-full flex-col gap-0.5">
               <div className="flex items-center justify-between">
-                <Typography variant="h5" color="blue-gray">
-                  Candice Wu
+                <Typography variant="h5" className="text-gray-200">
+                  Ava Martinez
                 </Typography>
                 <div className="5 flex items-center gap-0">
                   <StarIcon className="h-5 w-5 text-yellow-700" />
@@ -164,11 +170,13 @@ export default function CustomerReview() {
                   <StarIcon className="h-5 w-5 text-yellow-700" />
                 </div>
               </div>
-              <Typography color="blue-gray">Frontend Lead @ Google</Typography>
+              <Typography className="text-gray-400">
+                Manager @ Renata
+              </Typography>
             </div>
           </CardHeader>
           <CardBody className="mb-6 p-0 h-32">
-            <Typography>
+            <Typography className="text-gray-400">
               As a long-time fan of the franchise, I was thrilled to find this
               action figure toy on this site. The level of accuracy in capturing
               the character's likeness is remarkable. It's a great addition to
@@ -179,7 +187,7 @@ export default function CustomerReview() {
         <Card
           color="transparent"
           shadow={false}
-          className="w-full border-2 p-5 max-w-[26rem] mx-3">
+          className="w-full  p-5 max-w-[26rem] mx-3 bg-white/10  backdrop-blur-sm">
           <CardHeader
             color="transparent"
             floated={false}
@@ -193,8 +201,8 @@ export default function CustomerReview() {
             />
             <div className="flex w-full flex-col gap-0.5">
               <div className="flex items-center justify-between">
-                <Typography variant="h5" color="blue-gray">
-                  Candice Wu
+                <Typography variant="h5" className="text-gray-200">
+                  Ethan Thompson
                 </Typography>
                 <div className="5 flex items-center gap-0">
                   <StarIcon className="h-5 w-5 text-yellow-700" />
@@ -204,11 +212,13 @@ export default function CustomerReview() {
                   <StarIcon className="h-5 w-5 text-yellow-700" />
                 </div>
               </div>
-              <Typography color="blue-gray">Frontend Lead @ Google</Typography>
+              <Typography className="text-gray-400">
+                Frontend Lead @ Amazon
+              </Typography>
             </div>
           </CardHeader>
           <CardBody className="mb-6 p-0 h-32">
-            <Typography>
+            <Typography className="text-gray-400">
               I'm a collector and a photography enthusiast, and this action
               figure toy has become the perfect subject for my creative shots.
               The range of accessories and interchangeable parts adds so much
@@ -219,7 +229,7 @@ export default function CustomerReview() {
         <Card
           color="transparent"
           shadow={false}
-          className="w-full border-2 p-5 max-w-[26rem] mx-3">
+          className="w-full  p-5 max-w-[26rem] mx-3 bg-white/10  backdrop-blur-sm">
           <CardHeader
             color="transparent"
             floated={false}
@@ -233,8 +243,8 @@ export default function CustomerReview() {
             />
             <div className="flex w-full flex-col gap-0.5">
               <div className="flex items-center justify-between">
-                <Typography variant="h5" color="blue-gray">
-                  Candice Wu
+                <Typography variant="h5" className="text-gray-200">
+                  Olivia Rodriguez
                 </Typography>
                 <div className="5 flex items-center gap-0">
                   <StarIcon className="h-5 w-5 text-yellow-700" />
@@ -244,11 +254,13 @@ export default function CustomerReview() {
                   <StarIcon className="h-5 w-5 text-yellow-700" />
                 </div>
               </div>
-              <Typography color="blue-gray">Frontend Lead @ Google</Typography>
+              <Typography className="text-gray-400">
+                Product Manager @ Shopify
+              </Typography>
             </div>
           </CardHeader>
           <CardBody className="mb-6 p-0 h-32">
-            <Typography>
+            <Typography className="text-gray-400">
               I'm really impressed with the customer service I received from
               this site. When I had a question about the action figure toy I
               wanted to purchase, their support team responded promptly and
