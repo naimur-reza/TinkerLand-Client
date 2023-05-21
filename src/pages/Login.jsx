@@ -19,12 +19,18 @@ const Login = () => {
     console.log(email, password);
     signIn(email, password)
       .then((res) => {
+        toast.success("Login Successful!");
         navigate(from);
       })
       .catch((err) => toast.error(err.message));
   };
   const handleGoogle = () => {
-    popUpGoogle();
+    popUpGoogle()
+      .then((res) => {
+        navigate("/");
+        toast.success("Login Successful");
+      })
+      .catch((err) => toast.error(err.message));
   };
   return (
     <>

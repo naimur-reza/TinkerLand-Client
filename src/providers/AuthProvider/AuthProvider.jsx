@@ -31,13 +31,7 @@ const AuthProvider = ({ children }) => {
   const provider = new GoogleAuthProvider();
   const popUpGoogle = () => {
     setLoading(true);
-    return signInWithPopup(auth, provider)
-      .then((res) => {
-        const loggedUser = res.user;
-        setUser(loggedUser);
-        toast.success("Login Successful");
-      })
-      .catch((err) => console.log(err));
+    return signInWithPopup(auth, provider);
   };
   // lets sign in from here
   const signIn = (email, password) => {

@@ -5,6 +5,7 @@ import { toast } from "react-hot-toast";
 import { useForm } from "react-hook-form";
 import { Link, useLoaderData, useNavigation } from "react-router-dom";
 import Loader from "./Loader";
+import { Helmet } from "react-helmet";
 
 export default function UpdateToy() {
   const { register, handleSubmit } = useForm();
@@ -45,6 +46,9 @@ export default function UpdateToy() {
   }
   return (
     <>
+      <Helmet>
+        <title>TinkerLand | Update Toy</title>
+      </Helmet>
       <div className="pt-[120px] spider pb-10 px-5">
         <div className="bg-white/10 backdrop-blur-sm lg:w-1/2 px-8 py-4 mx-auto rounded-lg">
           <h1 className="text-3xl text-center font-semibold py-5 text-white">

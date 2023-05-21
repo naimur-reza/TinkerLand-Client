@@ -1,10 +1,11 @@
 import React, { useContext, useState } from "react";
 import { FaFacebook, FaGoogle, FaLinkedin } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider/AuthProvider";
 import { Button, Input } from "@material-tailwind/react";
 import { Helmet } from "react-helmet";
 const Register = () => {
+  const navigate = useNavigate();
   const { user, createUser, popUpGoogle } = useContext(AuthContext);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -15,7 +16,9 @@ const Register = () => {
     createUser(email, password);
   };
   const handleGoogle = () => {
-    popUpGoogle();
+    popUpGoogle().then((res) => {
+      navigate("/");
+    });
   };
   console.log(user);
   return (
@@ -45,7 +48,7 @@ const Register = () => {
                   type="text"
                   name="name"
                   onChange={(e) => setName(e.target.value)}
-                  className="Input border-2 rounded border-gray-2 border-2 rounded border-gray-200 "
+                  className="Input  border-gray-2 border-2 rounded border-gray-200 "
                 />
               </div>
               <div className="form-control">
