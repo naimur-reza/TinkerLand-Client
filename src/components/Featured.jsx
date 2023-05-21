@@ -12,8 +12,8 @@ import { Autoplay, Pagination } from "swiper";
 export default function Featured() {
   return (
     <>
-      <div className="py-10 bg-black">
-        <h1 className="text-3xl text-center font-semibold pb-8 text-gray-100">
+      <div className="py-20 bg-black">
+        <h1 className="text-3xl text-center font-semibold pb-14 text-gray-100">
           Featured <span className="text-orange-600">Toys</span>
         </h1>
         <Swiper

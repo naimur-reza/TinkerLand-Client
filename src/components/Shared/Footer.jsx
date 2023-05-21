@@ -20,7 +20,7 @@ const currentYear = new Date().getFullYear();
 export default function Footer() {
   return (
     <>
-      <h1 className="text-center pt-14 pb-10 text-3xl bg-black text-gray-200 ">
+      <h1 className="text-center pt-14 pb-14 text-3xl bg-black text-gray-200 ">
         Stay In Touch
       </h1>
       <footer className="relative w-full  pt-8 bg-black">

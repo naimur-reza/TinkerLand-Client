@@ -10,11 +10,11 @@ import Marquee from "react-fast-marquee";
 
 export default function CustomerReview() {
   return (
-    <div className="py-14 bg-black">
+    <div className="py-24 bg-black">
       <h1 className="text-3xl text-center font-semibold text-gray-200">
         Voices of Delight
       </h1>
-      <p className="opacity-70 text-center  pt-2 pb-10 text-gray-400 px-10">
+      <p className="opacity-70 text-center  pt-4 pb-14 text-gray-400 px-10">
         Unforgettable Experiences Shared by Our Valued Customers
       </p>
       <Marquee>
