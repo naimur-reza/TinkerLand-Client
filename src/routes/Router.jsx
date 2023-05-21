@@ -16,20 +16,6 @@ import ErrorPage from "../pages/errorPage";
 import CustomerReview from "../components/CustomerReview";
 
 const router = createBrowserRouter([
-  // {
-  //   path: "/",
-  //   Element: <LoginLayout />,
-  //   children: [
-  //     {
-  //       path: "/auth",
-  //       element: <Navigate to={"/home"} />,
-  //     },
-  //     {
-  //       path: "/auth/register",
-  //       element: <Navigate to={"/home"} />,
-  //     },
-  //   ],
-  // },
   {
     path: "/",
     element: <Main />,
