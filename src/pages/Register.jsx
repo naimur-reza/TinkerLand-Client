@@ -31,6 +31,7 @@ const Register = () => {
           onSubmit={handleRegister}
           className="card flex-shrink-0 w-full max-w-sm shadow-lg bg-base-100">
           <div className="card-body ">
+            <p>Register</p>
             <div className="form-control">
               <Input
                 label="Name"
@@ -98,7 +99,10 @@ const Register = () => {
                 />
               </div>
               <p className="my-text text-center py-3">
-                Already Have an Account? <Link to={"/login"}>Login</Link>
+                Already Have an Account?{" "}
+                <Link className="active " to={"/login"}>
+                  Login
+                </Link>
               </p>
             </div>
           </div>
