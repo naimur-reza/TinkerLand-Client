@@ -3,6 +3,7 @@ import { FaFacebook, FaGoogle, FaLinkedin } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider/AuthProvider";
 import { Button, Input } from "@material-tailwind/react";
+import { toast } from "react-hot-toast";
 const Login = () => {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
@@ -19,7 +20,7 @@ const Login = () => {
       .then((res) => {
         navigate(from);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => toast.error(err.message));
   };
   const handleGoogle = () => {
     popUpGoogle();
@@ -54,7 +55,7 @@ const Login = () => {
               <Input
                 required
                 label="Password"
-                type="text"
+                type="password"
                 size="lg"
                 name="password"
                 className="input input-bordered "
@@ -68,7 +69,9 @@ const Login = () => {
               </label>
             </div>
             <div className="form-control mt-6">
-              <Button color="amber">Login</Button>
+              <Button type="submit" color="amber">
+                Login
+              </Button>
             </div>
             <div>
               <p className="text-center my-text">Or Login With</p>

@@ -83,7 +83,11 @@ const Register = () => {
               </label>
             </div>
             <div className="form-control mt-6">
-              <Button onClick={handleRegister} variant="" color="amber">
+              <Button
+                type="submit"
+                onClick={handleRegister}
+                variant=""
+                color="amber">
                 Register
               </Button>
             </div>

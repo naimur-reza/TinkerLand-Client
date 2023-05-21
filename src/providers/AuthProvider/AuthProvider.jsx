@@ -26,7 +26,7 @@ const AuthProvider = ({ children }) => {
         setUser(loggedUser);
         <Navigate to={"/"} />;
       })
-      .catch((err) => console.log(err));
+      .catch((err) => toast.error(err.message));
   };
   const provider = new GoogleAuthProvider();
   const popUpGoogle = () => {
