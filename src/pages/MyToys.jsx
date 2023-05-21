@@ -101,7 +101,7 @@ const MyToys = () => {
             <h1 className="text-xl text-white">My Toys</h1>
             <select
               onChange={handleSort}
-              className="select select-bordered w-full max-w-xs text-gray-600">
+              className="select select-bordered w-1/3 lg:max-w-xs  text-gray-600">
               <option disabled selected>
                 Filter
               </option>
