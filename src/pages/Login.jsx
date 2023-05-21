@@ -44,7 +44,7 @@ const Login = () => {
                 label="Email"
                 required
                 size="lg"
-                type="text"
+                type="email"
                 name="email"
                 onChange={(e) => setEmail(e.target.value)}
                 className="input input-bordered"

@@ -14,7 +14,7 @@ export default function Banner() {
           alt="image 1"
           className="h-full w-full object-center"
         />
-        <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/40">
+        <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/50">
           <div className="w-3/4 text-center md:w-2/4">
             <Typography
               variant="h1"
@@ -47,7 +47,7 @@ export default function Banner() {
           alt="image 1"
           className="h-full w-full object-fill"
         />
-        <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/40">
+        <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/50">
           <div className="w-3/4 text-center md:w-2/4">
             <Typography
               variant="h1"
@@ -80,7 +80,7 @@ export default function Banner() {
           alt="image 2"
           className="h-full w-full object-fill"
         />
-        <div className="absolute inset-0 grid h-full w-full items-center bg-black/40">
+        <div className="absolute inset-0 grid h-full w-full items-center bg-black/50">
           <div className="w-3/4 pl-12 md:w-2/4 md:pl-20 lg:pl-32">
             <Typography
               variant="h1"
@@ -113,7 +113,7 @@ export default function Banner() {
           alt="image 3"
           className="h-full w-full object-fill"
         />
-        <div className="absolute inset-0 grid h-full w-full items-end bg-black/40">
+        <div className="absolute inset-0 grid h-full w-full items-end bg-black/50">
           <div className="w-3/4 pl-12 pb-12 md:w-2/4 md:pl-20 md:pb-20 lg:pl-32 lg:pb-32">
             <Typography
               variant="h1"
@@ -146,7 +146,7 @@ export default function Banner() {
           alt="image 3"
           className="h-full w-full object-fill"
         />
-        <div className="absolute inset-0 grid h-full w-full items-end bg-black/40">
+        <div className="absolute inset-0 grid h-full w-full items-end bg-black/50">
           <div className="w-3/4 pl-12 pb-12 md:w-2/4 md:pl-20 md:pb-20 lg:pl-32 lg:pb-32">
             <Typography
               variant="h1"

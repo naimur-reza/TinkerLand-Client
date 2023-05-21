@@ -35,31 +35,36 @@ export default function SubCategory() {
   }, [activeTab]);
 
   return (
-    <div className="my-container py-10">
-      <h1 className="text-center font-bold text-3xl  pb-5">
-        Shop By <span className="text-orange-600 ">Category</span>
-      </h1>
+    <div className="bg-gradient-to-t from-black via-red-900 to-black">
+      <div className="my-container py-10">
+        <h1 className="text-center font-bold text-3xl text-gray-200   py-8">
+          Shop By <span className="text-orange-600 ">Category</span>
+        </h1>
 
-      <Tabs value="html">
-        <TabsHeader>
-          {data?.map(({ label, value }, index) => (
-            <Tab onClick={() => setActiveTab(label)} value={value} key={index}>
-              {label}
-            </Tab>
-          ))}
-        </TabsHeader>
-        <TabsBody
-          className="grid grid-col-1 lg:grid-cols-3 gap-7 py-5"
-          animate={{
-            initial: { y: 250 },
-            mount: { y: 0 },
-            unmount: { y: 250 },
-          }}>
-          {toys?.map((toy, index) => (
-            <ToyCard key={index} toy={toy} value={toy.sub_category} />
-          ))}
-        </TabsBody>
-      </Tabs>
+        <Tabs value="html">
+          <TabsHeader>
+            {data?.map(({ label, value }, index) => (
+              <Tab
+                onClick={() => setActiveTab(label)}
+                value={value}
+                key={index}>
+                {label}
+              </Tab>
+            ))}
+          </TabsHeader>
+          <TabsBody
+            className="grid grid-col-1 lg:grid-cols-3 gap-7 py-5"
+            animate={{
+              initial: { y: 250 },
+              mount: { y: 0 },
+              unmount: { y: 250 },
+            }}>
+            {toys?.map((toy, index) => (
+              <ToyCard key={index} toy={toy} value={toy.sub_category} />
+            ))}
+          </TabsBody>
+        </Tabs>
+      </div>
     </div>
   );
 }

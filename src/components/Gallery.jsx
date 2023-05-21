@@ -27,29 +27,31 @@ const Gallery = () => {
   const delay = 600;
   return (
     <>
-      <h1 className="text-3xl font-bold pb-10 text-center pt-14">
-        Action Figure <span className="text-orange-500">Gallery</span>
-      </h1>
-      <div className="my-container overflow-hidden">
-        <ResponsiveMasonry columnsCountBreakPoints={{ 350: 3, 750: 2, 900: 5 }}>
-          <Masonry gutter="10px">
-            {images.map((image, i) => (
-              <img
-                className="hover:scale-105 duration-300"
-                key={i}
-                data-aos-duration="1000"
-                data-aos-easing="ease-in-out"
-                data-aos-mirror="true"
-                data-aos-once="false"
-                data-aos="fade-left"
-                delay={delay - 70}
-                src={image}
-                style={{ width: "100%", display: "block" }}
-                alt=""
-              />
-            ))}
-          </Masonry>
-        </ResponsiveMasonry>
+      <div className="bg-gray-100 pb-10">
+        <h1 className="text-3xl font-bold pb-10 text-center pt-14">
+          Action Figure <span className="text-orange-500">Gallery</span>
+        </h1>
+        <div className="my-container overflow-hidden">
+          <ResponsiveMasonry
+            columnsCountBreakPoints={{ 350: 3, 750: 2, 900: 5 }}>
+            <Masonry gutter="10px">
+              {images.map((image, i) => (
+                <img
+                  className="hover:scale-105 duration-300"
+                  key={i}
+                  data-aos-duration="1000"
+                  data-aos-easing="ease-in-out"
+                  data-aos-mirror="true"
+                  data-aos="fade-left"
+                  delay={delay - 70}
+                  src={image}
+                  style={{ width: "100%", display: "block" }}
+                  alt=""
+                />
+              ))}
+            </Masonry>
+          </ResponsiveMasonry>
+        </div>
       </div>
     </>
   );

@@ -20,7 +20,7 @@ const ToyCard = ({ toy }) => {
     quantity,
   } = toy;
   return (
-    <Card className="w-96 overflow-hidden">
+    <Card className="w-96 overflow-hidden bg-white/10 backdrop-blur-sm">
       <CardHeader shadow={false} floated={false} className="h-96">
         <img
           src={imageURl}
@@ -29,23 +29,21 @@ const ToyCard = ({ toy }) => {
       </CardHeader>
       <CardBody>
         <div className="flex items-center justify-between mb-2">
-          <Typography color="blue-gray" className="font-medium text-lg">
+          <Typography color="amber" className="font-medium text-lg">
             {name}
           </Typography>
-          <Typography color="blue-gray" className="font-medium text-xl">
+          <Typography className="font-medium text-xl text-gray-200">
             ${price}
           </Typography>
         </div>
         <Typography
           variant="small"
-          color="gray"
-          className="font-medium text-md mb-1 opacity-75 ">
+          className="font-medium text-md mb-1 opacity-75  text-gray-200">
           Seller: {seller_name}
         </Typography>
         <Typography
           variant="small"
-          color="gray"
-          className="font-normal opacity-75">
+          className="font-normal opacity-75 text-gray-200">
           Available Quantity: {quantity}
         </Typography>
       </CardBody>
@@ -54,7 +52,8 @@ const ToyCard = ({ toy }) => {
           <Button
             ripple={false}
             fullWidth={true}
-            className="bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:shadow-none hover:scale-105 focus:shadow-none focus:scale-105 active:scale-100">
+            color="amber"
+            className=" text-blue-gray-900 shadow-none hover:shadow-none hover:scale-105 focus:shadow-none focus:scale-105 active:scale-100">
             View Details
           </Button>
         </Link>
