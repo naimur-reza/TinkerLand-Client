@@ -1,7 +1,6 @@
 import { useNavigate, Navigate, createBrowserRouter } from "react-router-dom";
 import Main from "../layout/Main";
 import Home from "../pages/Home";
-import LoginLayout from "../layout/LoginLayout";
 import Profile from "../pages/Profile";
 import Blog from "../pages/Blog";
 import AddToys from "../pages/AddToys";
@@ -13,6 +12,7 @@ import ToyDetails from "../pages/ToyDetails";
 import PrivateRoute from "./PrivateRoute";
 import Loader from "../components/Loader";
 import UpdateToy from "../components/UpdateToy";
+import ErrorPage from "../pages/errorPage";
 
 const router = createBrowserRouter([
   // {
@@ -32,6 +32,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Main />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
