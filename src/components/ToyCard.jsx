@@ -20,7 +20,7 @@ const ToyCard = ({ toy }) => {
     quantity,
   } = toy;
   return (
-    <Card className="w-96 overflow-hidden bg-white/10 backdrop-blur-sm">
+    <Card className="lg:w-96 w-80 overflow-hidden bg-white/10 backdrop-blur-sm">
       <CardHeader shadow={false} floated={false} className="h-96">
         <img
           src={imageURl}

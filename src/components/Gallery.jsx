@@ -27,7 +27,7 @@ const Gallery = () => {
   const delay = 600;
   return (
     <>
-      <div className="bg-gray-100 pb-10">
+      <div className="bg-gray-100 pb-10 px-3">
         <h1 className="text-3xl font-bold pb-10 text-center pt-14">
           Action Figure <span className="text-orange-500">Gallery</span>
         </h1>

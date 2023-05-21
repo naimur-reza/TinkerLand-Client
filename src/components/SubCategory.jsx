@@ -31,11 +31,10 @@ export default function SubCategory() {
     fetch(`https://toys-server-chi.vercel.app/subToys?sub=${activeTab}`)
       .then((res) => res.json())
       .then((data) => setToys(data));
-    console.log(activeTab);
   }, [activeTab]);
 
   return (
-    <div className="bg-gradient-to-t from-black via-red-900 to-black">
+    <div className="bg-gradient-to-t from-black via-red-900 to-black px-3">
       <div className="my-container py-10">
         <h1 className="text-center font-bold text-3xl text-gray-200   py-8">
           Shop By <span className="text-orange-600 ">Category</span>
@@ -47,13 +46,14 @@ export default function SubCategory() {
               <Tab
                 onClick={() => setActiveTab(label)}
                 value={value}
+                defaultValue={"Avengers"}
                 key={index}>
                 {label}
               </Tab>
             ))}
           </TabsHeader>
           <TabsBody
-            className="grid grid-col-1 lg:grid-cols-3 gap-7 py-5"
+            className="grid place-items-center grid-col-1 lg:grid-cols-3 gap-7 py-5"
             animate={{
               initial: { y: 250 },
               mount: { y: 0 },
