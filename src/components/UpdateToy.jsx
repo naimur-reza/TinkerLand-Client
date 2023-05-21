@@ -24,7 +24,7 @@ export default function UpdateToy() {
     _id,
   } = toy || {};
   const onSubmit = (data) => {
-    fetch(`http://localhost:5000/update/${_id}`, {
+    fetch(`https://toys-server-chi.vercel.app/update/${_id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
@@ -110,7 +110,7 @@ export default function UpdateToy() {
             label="Image URL"
             {...register("imageURl")}
           />
-          <hr />
+
           <DialogFooter>
             <Link to={`/myToys`}>
               <Button variant="outlined" color="red" className="mr-1">

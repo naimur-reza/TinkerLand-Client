@@ -36,7 +36,7 @@ const MyToys = () => {
   const TABLE_HEAD = ["#", "Image", "Name", "Quantity", "Price", "Rating", ""];
   useEffect(() => {
     SetLoading(true);
-    fetch(`http://localhost:5000/toys?page=${active}`)
+    fetch(`https://toys-server-chi.vercel.app/toys?page=${active}`)
       .then((res) => res.json())
       .then((data) => {
         setToys(data);
@@ -68,7 +68,7 @@ const MyToys = () => {
   console.log(search);
   const handleSearch = () => {
     SetLoading(true);
-    fetch(`http://localhost:5000/toys?search=${search}`)
+    fetch(`https://toys-server-chi.vercel.app/toys?search=${search}`)
       .then((res) => res.json())
       .then((data) => {
         setToys(data);

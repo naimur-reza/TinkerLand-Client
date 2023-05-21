@@ -19,7 +19,7 @@ export default function ToyDetails() {
   console.log(id);
   useEffect(() => {
     setLoading(true);
-    fetch(`http://localhost:5000/toys/${id}`)
+    fetch(`https://toys-server-chi.vercel.app/toys/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setData(data);

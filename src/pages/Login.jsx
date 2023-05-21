@@ -17,20 +17,7 @@ const Login = () => {
     console.log(email, password);
     signIn(email, password)
       .then((res) => {
-        const user = res.user;
-        const loggedUser = { email: user.email };
-
-        fetch("http://localhost:5000/jwt", {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify({ loggedUser }),
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            navigate(from);
-          });
+        navigate(from);
       })
       .catch((err) => console.log(err));
   };

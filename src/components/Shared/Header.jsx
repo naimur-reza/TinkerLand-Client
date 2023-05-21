@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider/AuthProvider";
 import hulk from "../../assets/hulk.png";
+import logo from "../../assets/logo.png";
 import { FaSignInAlt, FaSignOutAlt, FaUser } from "react-icons/fa";
 import {
   Avatar,
@@ -45,7 +46,7 @@ const Header = () => {
         </div>
         <div className="flex items-center gap-2">
           {" "}
-          <img className="w-20" src={hulk} alt="" />
+          <img className="w-14" src={logo} alt="" />
           <a className=" normal-case text-xl">TinkerLand</a>
         </div>
       </div>
