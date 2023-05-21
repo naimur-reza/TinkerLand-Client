@@ -45,83 +45,92 @@ export default function UpdateToy() {
   }
   return (
     <>
-      <div className="pt-[120px] spider">
-        <h1 className="text-3xl text-center font-semibold py-5 text-white">
-          Update This Toy
-        </h1>
-        <form
-          className="space-y-5 my-container"
-          onSubmit={handleSubmit(onSubmit)}>
-          <div className="flex gap-5 ">
-            <Input
-              color="white"
-              defaultValue={name}
-              size="lg"
-              className="text"
-              label="Name"
-              {...register("name")}
-            />
-            <Input
-              defaultValue={sub_category}
-              color="white"
-              size="lg"
-              label="Sub Category"
-              {...register("sub_category")}
-            />
-          </div>
+      <div className="pt-[120px] spider pb-10 px-5">
+        <div className="bg-white/10 backdrop-blur-sm lg:w-1/2 px-8 py-4 mx-auto rounded-lg">
+          <h1 className="text-3xl text-center font-semibold py-5 text-white">
+            Update This Toy
+          </h1>
+          <form
+            className="space-y-7 my-container "
+            onSubmit={handleSubmit(onSubmit)}>
+            <div className="lg:flex gap-5 space-y-3 lg:space-y-0">
+              <Input
+                className="pb-2"
+                color="white"
+                defaultValue={name}
+                size="lg"
+                type="text"
+                label="Name"
+                {...register("name")}
+              />
+              <Input
+                className="pb-2"
+                defaultValue={sub_category}
+                color="white"
+                size="lg"
+                label="Sub Category"
+                {...register("sub_category")}
+              />
+            </div>
 
-          <div className="flex gap-5">
+            <div className="lg:flex gap-5 space-y-3 lg:space-y-0">
+              <Input
+                className="pb-2"
+                color="white"
+                size="lg"
+                label="Price"
+                defaultValue={("$", price)}
+                {...register("price")}
+              />
+              <Input
+                className="pb-2"
+                color="white"
+                size="lg"
+                label="Rating"
+                defaultValue={rating}
+                {...register("rating")}
+              />
+            </div>
+            <div className="lg:flex gap-5 space-y-3 lg:space-y-0">
+              <Input
+                className="pb-2"
+                color="white"
+                size="lg"
+                label="Available Quantity"
+                defaultValue={quantity}
+                {...register("quantity")}
+              />
+              <Input
+                className="pb-2"
+                color="white"
+                size="lg"
+                defaultValue={description}
+                label="Detail Description"
+                {...register("description")}
+              />
+            </div>
             <Input
+              className="pb-2"
               color="white"
+              defaultValue={imageURl}
               size="lg"
-              label="Price"
-              defaultValue={("$", price)}
-              {...register("price")}
+              type="text"
+              label="Image URL"
+              {...register("imageURl")}
             />
-            <Input
-              color="white"
-              size="lg"
-              label="Rating"
-              defaultValue={rating}
-              {...register("rating")}
-            />
-          </div>
-          <div className="flex gap-5">
-            <Input
-              color="white"
-              size="lg"
-              label="Available Quantity"
-              defaultValue={quantity}
-              {...register("quantity")}
-            />
-            <Input
-              color="white"
-              size="lg"
-              defaultValue={description}
-              label="Detail Description"
-              {...register("description")}
-            />
-          </div>
-          <Input
-            color="white"
-            defaultValue={imageURl}
-            size="lg"
-            className="text"
-            label="Image URL"
-            {...register("imageURl")}
-          />
 
-          <DialogFooter>
-            <Link to={`/myToys`}>
-              <Button variant="outlined" color="red" className="mr-1">
-                Cancel
+            <DialogFooter>
+              <Link to={`/myToys`}>
+                <Button variant="outlined" color="red" className="mr-1">
+                  Cancel
+                </Button>
+              </Link>
+              <Button type="submit" variant="gradient" color="cyan">
+                <span>Update</span>
               </Button>
-            </Link>
-            <Button type="submit" variant="gradient" color="cyan">
-              <span>Update</span>
-            </Button>
-          </DialogFooter>
-        </form>
+            </DialogFooter>
+          </form>
+        </div>
       </div>
     </>
   );
