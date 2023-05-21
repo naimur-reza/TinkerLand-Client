@@ -95,7 +95,7 @@ const MyToys = () => {
       <Helmet>
         <title>TinkerLand | My Toys</title>
       </Helmet>
-      <div className="thor">
+      <div className="thor h-[100vh]">
         <div className="grid  py-4 my-container pt-[110px]">
           <div className="flex justify-between items-center py-5">
             <h1 className="text-xl text-white">My Toys</h1>

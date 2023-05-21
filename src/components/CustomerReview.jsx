@@ -14,7 +14,7 @@ export default function CustomerReview() {
       <h1 className="text-3xl text-center font-semibold text-gray-200">
         Voices of Delight
       </h1>
-      <p className="opacity-70 text-center  pt-2 pb-5 text-gray-400 px-10">
+      <p className="opacity-70 text-center  pt-2 pb-10 text-gray-400 px-10">
         Unforgettable Experiences Shared by Our Valued Customers
       </p>
       <Marquee>
@@ -30,7 +30,7 @@ export default function CustomerReview() {
             <Avatar
               size="lg"
               variant="circular"
-              src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0QnzOXQogNVxO8VcSotb7dFw7OUAqW5TBlQ&usqp=CAU"
               alt="candice wu"
             />
             <div className="flex w-full flex-col gap-0.5">
@@ -72,7 +72,7 @@ export default function CustomerReview() {
             <Avatar
               size="lg"
               variant="circular"
-              src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
+              src="https://t4.ftcdn.net/jpg/02/45/56/35/360_F_245563558_XH9Pe5LJI2kr7VQuzQKAjAbz9PAyejG1.webp"
               alt="candice wu"
             />
             <div className="flex w-full flex-col gap-0.5">
@@ -114,7 +114,7 @@ export default function CustomerReview() {
             <Avatar
               size="lg"
               variant="circular"
-              src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
+              src="https://t3.ftcdn.net/jpg/01/29/53/60/240_F_129536040_xSh3RrAMtGgME7K8fcNnEo8dKOnd3zsr.jpg"
               alt="candice wu"
             />
             <div className="flex w-full flex-col gap-0.5">
@@ -154,7 +154,7 @@ export default function CustomerReview() {
             <Avatar
               size="lg"
               variant="circular"
-              src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
+              src="https://t3.ftcdn.net/jpg/01/10/79/02/240_F_110790299_wdE1KqnWAlkjlfD8nujgEWuTtLzAnzxa.jpg"
               alt="candice wu"
             />
             <div className="flex w-full flex-col gap-0.5">
@@ -196,7 +196,7 @@ export default function CustomerReview() {
             <Avatar
               size="lg"
               variant="circular"
-              src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
+              src="https://t3.ftcdn.net/jpg/01/94/26/74/240_F_194267423_JEGeINWX80qQNbRN8Whthl4q5OxoFfgP.jpg"
               alt="candice wu"
             />
             <div className="flex w-full flex-col gap-0.5">
@@ -238,7 +238,7 @@ export default function CustomerReview() {
             <Avatar
               size="lg"
               variant="circular"
-              src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
+              src="https://t3.ftcdn.net/jpg/04/35/46/06/240_F_435460654_uZVB1QyHfcs6M1nW5gfLpsZfJkFwx70i.jpg"
               alt="candice wu"
             />
             <div className="flex w-full flex-col gap-0.5">
