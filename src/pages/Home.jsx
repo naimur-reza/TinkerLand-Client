@@ -3,6 +3,7 @@ import Banner from "../components/Banner";
 import Gallery from "../components/Gallery";
 import SubCategory from "../components/SubCategory";
 import { Helmet } from "react-helmet";
+import Featured from "../components/Featured";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <Banner />
       <Gallery />
       <SubCategory />
+      <Featured />
     </div>
   );
 };

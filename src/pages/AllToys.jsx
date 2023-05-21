@@ -84,7 +84,7 @@ const MyToys = () => {
       <div className="thor">
         <div className="grid  py-4 my-container pt-[110px] ">
           <div className="flex  justify-between items-center px-3 py-5">
-            <div>All Toys</div>
+            <div className="text-white text-xl">All Toys</div>
             <div className="flex items-center gap-2">
               <Input
                 onChange={(e) => setSearch(e.target.value)}

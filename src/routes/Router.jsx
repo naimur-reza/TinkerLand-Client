@@ -13,6 +13,7 @@ import PrivateRoute from "./PrivateRoute";
 import Loader from "../components/Loader";
 import UpdateToy from "../components/UpdateToy";
 import ErrorPage from "../pages/errorPage";
+import Featured from "../components/Featured";
 
 const router = createBrowserRouter([
   // {
@@ -96,6 +97,10 @@ const router = createBrowserRouter([
       {
         path: "loader",
         element: <Loader />,
+      },
+      {
+        path: "featured",
+        element: <Featured />,
       },
     ],
   },
