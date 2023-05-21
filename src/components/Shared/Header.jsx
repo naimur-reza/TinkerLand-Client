@@ -61,7 +61,7 @@ const Header = () => {
             <Link
               className={({ isActive }) => (isActive ? "active" : "")}
               to={"/blogs"}>
-              Blog
+              Blogs
             </Link>
           </ul>
         </div>
@@ -94,9 +94,9 @@ const Header = () => {
             Add A Toy
           </NavLink>
           <NavLink
-            to={"/blog"}
+            to={"/blogs"}
             className={({ isActive }) => (isActive ? "active" : "")}>
-            Blog
+            Blogs
           </NavLink>
         </ul>
       </div>

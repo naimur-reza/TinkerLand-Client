@@ -4,6 +4,7 @@ import Gallery from "../components/Gallery";
 import SubCategory from "../components/SubCategory";
 import { Helmet } from "react-helmet";
 import Featured from "../components/Featured";
+import CustomerReview from "../components/CustomerReview";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <Gallery />
       <SubCategory />
       <Featured />
+      <CustomerReview />
     </div>
   );
 };

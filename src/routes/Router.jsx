@@ -13,7 +13,7 @@ import PrivateRoute from "./PrivateRoute";
 import Loader from "../components/Loader";
 import UpdateToy from "../components/UpdateToy";
 import ErrorPage from "../pages/errorPage";
-import Featured from "../components/Featured";
+import CustomerReview from "../components/CustomerReview";
 
 const router = createBrowserRouter([
   // {
@@ -100,7 +100,7 @@ const router = createBrowserRouter([
       },
       {
         path: "featured",
-        element: <Featured />,
+        element: <CustomerReview />,
       },
     ],
   },
