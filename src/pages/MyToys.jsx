@@ -16,6 +16,7 @@ import Swal from "sweetalert2/src/sweetalert2.js";
 import UpdateToy from "../components/UpdateToy";
 import { toast } from "react-hot-toast";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 const MyToys = () => {
   // delete and re-render state
   const [render, setRender] = useState(false);
@@ -91,6 +92,9 @@ const MyToys = () => {
   };
   return (
     <>
+      <Helmet>
+        <title>TinkerLand | My Toys</title>
+      </Helmet>
       <div className="grid  py-4 my-container pt-[110px]">
         <div className="flex justify-between items-center py-5">
           <h1>My Toys</h1>

@@ -37,12 +37,32 @@ const Header = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-compact dropdown-content mt-3 p-4 shadow bg-black text-white rounded-box w-52">
-            <Link>Home</Link>
-            <Link>All Toys</Link>
-            <Link>My Toys</Link>
-            <Link>Add A Toys</Link>
-            <Link>Blog</Link>
+            className="menu menu-compact dropdown-content mt-3 p-4 shadow bg-black text-white rounded-box w-52 space-y-3">
+            <Link
+              className={({ isActive }) => (isActive ? "active" : "")}
+              to={"/"}>
+              Home
+            </Link>
+            <Link
+              className={({ isActive }) => (isActive ? "active" : "")}
+              to={"/allToys"}>
+              All Toys
+            </Link>
+            <Link
+              className={({ isActive }) => (isActive ? "active" : "")}
+              to={"/myToys"}>
+              My Toys
+            </Link>
+            <Link
+              className={({ isActive }) => (isActive ? "active" : "")}
+              to={"/addToy"}>
+              Add A Toy
+            </Link>
+            <Link
+              className={({ isActive }) => (isActive ? "active" : "")}
+              to={"/blogs"}>
+              Blog
+            </Link>
           </ul>
         </div>
         <div className="flex items-center gap-2">
@@ -71,7 +91,7 @@ const Header = () => {
           <NavLink
             to={"/addToys"}
             className={({ isActive }) => (isActive ? "active" : "")}>
-            Add A Toys
+            Add A Toy
           </NavLink>
           <NavLink
             to={"/blog"}
@@ -110,14 +130,16 @@ const Header = () => {
               </MenuItem>
             </MenuList>
           ) : (
-            <Button
-              variant="outlined"
-              color="orange"
-              size="sm"
-              className="inline-flex items-center gap-2">
-              {" "}
-              <FaSignInAlt /> <Link to={"/login"}>Sign In</Link>
-            </Button>
+            <Link to={"/login"}>
+              <Button
+                variant="outlined"
+                color="orange"
+                size="sm"
+                className="inline-flex items-center gap-2">
+                {" "}
+                <FaSignInAlt /> Sign In
+              </Button>
+            </Link>
           )}
         </Menu>
       </div>
