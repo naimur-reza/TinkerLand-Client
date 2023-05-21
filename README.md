@@ -8,7 +8,7 @@
 - Find Your needy toys from this site
 - Avaliable Action Toys on here
 - Avaliable Login and Registration 
-- Avaliable login with Google=
+- Avaliable login with Google
 - Available Profile and Blogs
 - Avaliable Featured and Gallery
 
@@ -25,6 +25,6 @@
 - Vite React
 - Tailwind Css
 - React Marquee
-- Burger-menu
+- Aos Animation
 - React-icons
 - React Router
