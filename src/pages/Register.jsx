@@ -13,7 +13,9 @@ const Register = () => {
   const [PhotoURL, setPhotoURL] = useState("");
   const handleRegister = (e) => {
     e.preventDefault();
-    createUser(email, password);
+    createUser(email, password).then((res) => {
+      navigate("/");
+    });
   };
   const handleGoogle = () => {
     popUpGoogle().then((res) => {
