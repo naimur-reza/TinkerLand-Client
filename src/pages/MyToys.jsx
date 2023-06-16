@@ -17,6 +17,7 @@ import UpdateToy from "../components/UpdateToy";
 import { toast } from "react-hot-toast";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import EmptyState from "../components/Shared/EmptyState";
 const MyToys = () => {
   // delete and re-render state
   const [render, setRender] = useState(false);
@@ -96,106 +97,110 @@ const MyToys = () => {
         <title>TinkerLand | My Toys</title>
       </Helmet>
       <div className="thor h-[100vh]">
-        <div className="grid  py-4 my-container pt-[110px]">
-          <div className="flex justify-between items-center py-5">
-            <h1 className="text-xl text-white">My Toys</h1>
-            <select
-              onChange={handleSort}
-              className="select select-bordered w-1/3 lg:max-w-xs  text-gray-600">
-              <option disabled selected>
-                Filter
-              </option>
-              <option>Price: Low To High</option>
-              <option>Price: High To Low</option>
-            </select>
-          </div>
-          <Card className="overflow-scroll h-full w-full">
-            <table className="w-full min-w-max table-auto text-left">
-              <thead>
-                <tr>
-                  {TABLE_HEAD.map((head) => (
-                    <th
-                      key={head}
-                      className="border-b border-blue-gray-100 bg-blue-gray-50 p-4">
-                      <Typography
-                        variant="small"
-                        color="blue-gray"
-                        className="font-normal leading-none opacity-70">
-                        {head}
-                      </Typography>
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {toys.map((toy, index) => (
-                  <tr key={index} className="even:bg-blue-gray-50/50">
-                    <td className="p-4">
-                      <p>{index + 1}</p>
-                    </td>
-                    <td className="p-4">
-                      <Avatar
-                        src={toy?.imageURl}
-                        size="lg"
-                        className="border border-blue-gray-50 bg-blue-gray-50/50 object-contain p-1"
-                      />
-                    </td>
-                    <td className="p-4">
-                      <Typography
-                        variant="small"
-                        color="blue-gray"
-                        className="font-normal">
-                        {toy?.name}
-                      </Typography>
-                    </td>
-                    <td className="p-4">
-                      <Typography
-                        variant="small"
-                        color="blue-gray"
-                        className="font-normal">
-                        {toy?.quantity}
-                      </Typography>
-                    </td>
-                    <td className="p-4">
-                      <Typography
-                        variant="small"
-                        color="blue-gray"
-                        className="font-normal">
-                        $ {toy?.price}
-                      </Typography>
-                    </td>
-                    <td className="p-4">
-                      <Typography
-                        variant="small"
-                        color="blue-gray"
-                        className="font-normal">
-                        {toy?.rating}
-                      </Typography>
-                    </td>
-                    <td className="">
-                      <Link to={`/updateToy/${toy._id}`}>
+        {toys && Array.isArray(toys) && toys.length > 0 ? (
+          <div className="grid  py-4 my-container pt-[110px]">
+            <div className="flex justify-between items-center py-5">
+              <h1 className="text-xl text-white">My Toys</h1>
+              <select
+                onChange={handleSort}
+                className="select select-bordered w-1/3 lg:max-w-xs  text-gray-600">
+                <option disabled selected>
+                  Filter
+                </option>
+                <option>Price: Low To High</option>
+                <option>Price: High To Low</option>
+              </select>
+            </div>
+            <Card className="overflow-scroll h-full w-full">
+              <table className="w-full min-w-max table-auto text-left">
+                <thead>
+                  <tr>
+                    {TABLE_HEAD.map((head) => (
+                      <th
+                        key={head}
+                        className="border-b border-blue-gray-100 bg-blue-gray-50 p-4">
+                        <Typography
+                          variant="small"
+                          color="blue-gray"
+                          className="font-normal leading-none opacity-70">
+                          {head}
+                        </Typography>
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {toys.map((toy, index) => (
+                    <tr key={index} className="even:bg-blue-gray-50/50">
+                      <td className="p-4">
+                        <p>{index + 1}</p>
+                      </td>
+                      <td className="p-4">
+                        <Avatar
+                          src={toy?.imageURl}
+                          size="lg"
+                          className="border border-blue-gray-50 bg-blue-gray-50/50 object-contain p-1"
+                        />
+                      </td>
+                      <td className="p-4">
+                        <Typography
+                          variant="small"
+                          color="blue-gray"
+                          className="font-normal">
+                          {toy?.name}
+                        </Typography>
+                      </td>
+                      <td className="p-4">
+                        <Typography
+                          variant="small"
+                          color="blue-gray"
+                          className="font-normal">
+                          {toy?.quantity}
+                        </Typography>
+                      </td>
+                      <td className="p-4">
+                        <Typography
+                          variant="small"
+                          color="blue-gray"
+                          className="font-normal">
+                          $ {toy?.price}
+                        </Typography>
+                      </td>
+                      <td className="p-4">
+                        <Typography
+                          variant="small"
+                          color="blue-gray"
+                          className="font-normal">
+                          {toy?.rating}
+                        </Typography>
+                      </td>
+                      <td className="">
+                        <Link to={`/updateToy/${toy._id}`}>
+                          <IconButton
+                            className="ml-3"
+                            variant="outlined"
+                            color="gray">
+                            <FaPen />
+                          </IconButton>
+                        </Link>
+                      </td>
+                      <td>
                         <IconButton
                           className="ml-3"
-                          variant="outlined"
-                          color="gray">
-                          <FaPen />
+                          onClick={() => handleDelete(toy?._id)}
+                          color="red">
+                          <FaTrash />
                         </IconButton>
-                      </Link>
-                    </td>
-                    <td>
-                      <IconButton
-                        className="ml-3"
-                        onClick={() => handleDelete(toy?._id)}
-                        color="red">
-                        <FaTrash />
-                      </IconButton>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </Card>
-        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </Card>
+          </div>
+        ) : (
+          <EmptyState />
+        )}
       </div>
     </>
   );

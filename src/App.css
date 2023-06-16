@@ -21,10 +21,11 @@
 .thor {
   background-size: cover;
   background-image: linear-gradient(rgba(0, 0, 0, 0.565), rgba(0, 0, 0, 0.491)),
-    url("https://i.ibb.co/tKMVvPv/ravi-palwe-u9r-Pmou-D6z0-unsplash.jpg");
+    url("https://i.ibb.co/Ycw5XHv/bg.jpg");
   height: calc(100vh-96px);
 
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  object-fit: cover;
 }

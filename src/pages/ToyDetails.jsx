@@ -56,7 +56,11 @@ export default function ToyDetails() {
             shadow={false}
             floated={false}
             className="lg:w-2/6  shrink-0 m-0 lg:rounded-r-none rounded-lg">
-            <img src={imageURl} alt="image" className="w-full h-full object-" />
+            <img
+              src={imageURl}
+              alt="image"
+              className="w-full  h-full object-cover"
+            />
           </CardHeader>
           <CardBody>
             <p variant="h6" color="blue" className="uppercase mb-4">

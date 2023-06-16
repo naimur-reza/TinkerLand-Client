@@ -106,8 +106,9 @@ const Header = () => {
             <Tooltip content={user?.displayName}>
               <MenuHandler>
                 <Avatar
+                  referrerPolicy="no-referrer"
                   withBorder={true}
-                  className="p-0.5 cursor-pointer"
+                  className="p-0.5 cursor-pointer object-cover"
                   src={user?.photoURL}
                 />
               </MenuHandler>

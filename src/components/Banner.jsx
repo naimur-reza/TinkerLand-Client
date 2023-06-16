@@ -12,7 +12,7 @@ export default function Banner() {
         <img
           src="https://i.ibb.co/kQgp50b/action-figures-7243788-1920.jpg"
           alt="image 1"
-          className="h-full w-full object-center"
+          className="h-full w-full object-cover"
         />
         <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/50">
           <div className="w-3/4 text-center md:w-2/4">
